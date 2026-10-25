@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>iPhone版 完全スタンドアロン インストーラー ― 青空文庫＆文書AI朗読</title>
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="青空AI朗読" />
+  <style>
+    body {
+      margin: 0; padding: 20px 16px 48px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+      background: #0f172a; color: #f8fafc;
+      line-height: 1.6;
+    }
+    .card {
+      max-width: 460px; margin: 0 auto;
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 20px; padding: 22px 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+    .app-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+    }
+    .app-icon {
+      width: 64px; height: 64px; border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(16,185,129,0.3);
+      flex-shrink: 0;
+    }
+    .btn-primary {
+      display: block; width: 100%; box-sizing: border-box;
+      text-align: center; text-decoration: none;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff; font-weight: 800; font-size: 16px;
+      padding: 15px 16px; border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(16,185,129,0.35);
+      margin: 14px 0 10px;
+    }
+    .btn-secondary {
+      display: block; width: 100%; box-sizing: border-box;
+      text-align: center; text-decoration: none;
+      background: #2563eb; color: #ffffff;
+      font-weight: 700; font-size: 15px;
+      padding: 13px 16px; border-radius: 14px;
+      margin: 10px 0;
+    }
+    .step-box {
+      background: #0f172a; border: 1px solid #334155;
+      border-radius: 14px; padding: 14px; margin-top: 14px;
+      font-size: 13px; color: #cbd5e1;
+    }
+    .step-box strong { color: #38bdf8; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="app-header">
+      <img src="icons/icon-192.png" alt="Icon" class="app-icon" />
+      <div>
+        <div style="font-size:12px;color:#34d399;font-weight:700;">iPhone SE 完全スタンドアロン版 (PC不要・永久動作)</div>
+        <h1 style="font-size:18px;margin:2px 0 4px;color:#ffffff;">青空文庫＆文書AI朗読</h1>
+        <div style="font-size:12px;color:#94a3b8;">複数声優オート配役プレイヤー (v1.6.9 iOS)</div>
+      </div>
+    </div>
+
+    <a href="install.mobileconfig" class="btn-primary">
+      📲 ① 1タップでiPhoneにインストール (構成プロファイル)
+    </a>
+
+    <a href="./?ios_app=1&standalone=1" class="btn-secondary">
+      🚀 ② アプリ本体を開く (Safariの「ホーム画面に追加」用)
+    </a>
+
+    <div class="step-box">
+      <div style="font-weight:700;color:#f8fafc;margin-bottom:6px;">💡 iPhone SE へのインストール手順（どちらでも完全単体動作）</div>
+      <div style="margin-bottom:10px;">
+        <strong>方法①（プロファイルで1タップ導入）：</strong><br/>
+        1. 上の緑ボタンをタップ ➔「許可」を押す<br/>
+        2. iPhoneの<strong>「設定」アプリ</strong>を開き、最上部の<strong>「プロファイルがダウンロード済み」➔「インストール」</strong>を押すとホーム画面に『青空AI朗読』が追加されます。
+      </div>
+      <div>
+        <strong>方法②（プロファイル不要・Safariから直接追加）：</strong><br/>
+        1. 上の青ボタン「🚀 ② アプリ本体を開く」をタップ<br/>
+        2. Safari下部の<strong>共有ボタン［↑］➔「ホーム画面に追加」</strong>をタップするだけで完了です。
+      </div>
+    </div>
+  </div>
+</body>
+</html>

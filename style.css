@@ -1,0 +1,5788 @@
+/* ==============================================
+   青空文庫＆文書 AI朗読プレイヤー スタイルシート (Professional Smartphone UI/UX)
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=Kaisei+Tokumin:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-dark: #f6f7f9;
+  --card-dark: #ffffff;
+  --card-hover: #f1f3f6;
+  --card-secondary: #f0f2f5;
+  --border-dark: #e2e8f0;
+  --border-subtle: #edf2f7;
+  --border-accent: #2563eb;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-sub: #94a3b8;
+  --highlight-bg: rgba(37, 99, 235, 0.08);
+  --highlight-border: #2563eb;
+  --highlight-accent: #1d4ed8;
+  --speaker-badge-bg: #dbeafe;
+  --speaker-badge-text: #1d4ed8;
+  --narration-badge-bg: #f1f5f9;
+  --narration-badge-text: #475569;
+  --player-bg: rgba(255, 255, 255, 0.98);
+  --bottom-nav-bg: rgba(255, 255, 255, 0.98);
+  --bottom-nav-active: #2563eb;
+  --modal-bg: #ffffff;
+  --modal-header-border: #e2e8f0;
+  --input-bg: #f8fafc;
+  --input-border: #cbd5e1;
+  --input-text: #1e293b;
+  --hero-bg: linear-gradient(135deg, #eff6ff 0%, #ffffff 60%, #eef2ff 100%);
+  --hero-border: #bfdbfe;
+}
+
+/* ==============================================
+   4大カラーテーマ (読書エルゴノミクス & 高級感)
+   ============================================== */
+
+/* 1. Dark (デフォルト スレート・ミッドナイト) */
+body.theme-dark {
+  --bg-dark: #0b0f17;
+  --card-dark: #121926;
+  --card-hover: #1b2436;
+  --card-secondary: #0d121c;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-accent: #3b82f6;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-sub: #64748b;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --highlight-bg: rgba(59, 130, 246, 0.12);
+  --highlight-border: #3b82f6;
+  --highlight-accent: #60a5fa;
+  --speaker-badge-bg: rgba(59, 130, 246, 0.2);
+  --speaker-badge-text: #93c5fd;
+  --narration-badge-bg: rgba(100, 116, 139, 0.2);
+  --narration-badge-text: #cbd5e1;
+  --player-bg: rgba(11, 15, 23, 0.95);
+  --bottom-nav-bg: rgba(11, 15, 23, 0.96);
+  --bottom-nav-active: #3b82f6;
+  --modal-bg: #121926;
+  --modal-header-border: rgba(255, 255, 255, 0.08);
+  --input-bg: #0b0f17;
+  --input-border: rgba(255, 255, 255, 0.12);
+  --input-text: #f1f5f9;
+  --hero-bg: linear-gradient(135deg, rgba(30, 58, 138, 0.45) 0%, rgba(18, 25, 38, 0.95) 50%, rgba(49, 46, 129, 0.45) 100%);
+  --hero-border: rgba(59, 130, 246, 0.35);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+/* 2. OLED Black (漆黒・有機EL省電力 & ハイコントラスト) */
+body.theme-oled {
+  --bg-dark: #000000;
+  --card-dark: #0c0d12;
+  --card-hover: #161822;
+  --card-secondary: #050608;
+  --border-dark: #222530;
+  --border-subtle: #181a22;
+  --border-accent: #60a5fa;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --text-sub: #71717a;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --highlight-bg: rgba(59, 130, 246, 0.2);
+  --highlight-border: #60a5fa;
+  --highlight-accent: #93c5fd;
+  --speaker-badge-bg: rgba(59, 130, 246, 0.25);
+  --speaker-badge-text: #bfdbfe;
+  --narration-badge-bg: rgba(63, 63, 70, 0.4);
+  --narration-badge-text: #e4e4e7;
+  --player-bg: rgba(0, 0, 0, 0.98);
+  --bottom-nav-bg: rgba(0, 0, 0, 0.98);
+  --bottom-nav-active: #60a5fa;
+  --modal-bg: #0a0b10;
+  --modal-header-border: #222530;
+  --input-bg: #000000;
+  --input-border: #2e3342;
+  --input-text: #ffffff;
+  --hero-bg: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, #0c0d12 60%, rgba(49, 46, 129, 0.5) 100%);
+  --hero-border: rgba(96, 165, 250, 0.4);
+  background-color: #000000;
+  color: #ffffff;
+}
+body.theme-oled [class*="bg-slate-950"] {
+  background-color: #050608 !important;
+  border-color: #222530 !important;
+}
+body.theme-oled [class*="bg-slate-900"] {
+  background-color: #0c0d12 !important;
+  border-color: #222530 !important;
+}
+body.theme-oled [class*="bg-slate-800"] {
+  background-color: #161822 !important;
+  border-color: #27272a !important;
+}
+body.theme-oled [class*="border-slate-"] {
+  border-color: #222530 !important;
+}
+body.theme-oled [class*="text-slate-100"],
+body.theme-oled [class*="text-slate-200"] {
+  color: #ffffff !important;
+}
+body.theme-oled [class*="text-slate-300"],
+body.theme-oled [class*="text-slate-400"] {
+  color: #a1a1aa !important;
+}
+body.theme-oled [class*="text-slate-500"],
+body.theme-oled [class*="text-slate-600"] {
+  color: #71717a !important;
+}
+
+/* 3. Paper White (書籍ペーパー・自然な紙の白さと眼精疲労軽減) */
+body.theme-paper {
+  --bg-dark: #f6f7f9;
+  --card-dark: #ffffff;
+  --card-hover: #f1f3f6;
+  --card-secondary: #f0f2f5;
+  --border-dark: #e2e8f0;
+  --border-subtle: #edf2f7;
+  --border-accent: #2563eb;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-sub: #94a3b8;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --highlight-bg: rgba(37, 99, 235, 0.08);
+  --highlight-border: #2563eb;
+  --highlight-accent: #1d4ed8;
+  --speaker-badge-bg: #dbeafe;
+  --speaker-badge-text: #1d4ed8;
+  --narration-badge-bg: #f1f5f9;
+  --narration-badge-text: #475569;
+  --player-bg: rgba(255, 255, 255, 0.98);
+  --bottom-nav-bg: rgba(255, 255, 255, 0.98);
+  --bottom-nav-active: #2563eb;
+  --modal-bg: #ffffff;
+  --modal-header-border: #e2e8f0;
+  --input-bg: #f8fafc;
+  --input-border: #cbd5e1;
+  --input-text: #1e293b;
+  --hero-bg: linear-gradient(135deg, #eff6ff 0%, #ffffff 60%, #eef2ff 100%);
+  --hero-border: #bfdbfe;
+  background-color: #f6f7f9;
+  color: #1e293b;
+}
+
+/* 4. Warm Sepia (暖色羊皮紙・長時間読書に最適な優しい琥珀色) */
+body.theme-sepia {
+  --bg-dark: #f5ede1;
+  --card-dark: #faf5ec;
+  --card-hover: #efe5d6;
+  --card-secondary: #ede1d0;
+  --border-dark: #e2d4c0;
+  --border-subtle: #eae0d0;
+  --border-accent: #b45309;
+  --text-main: #2e2319;
+  --text-muted: #6e5a48;
+  --text-sub: #998370;
+  --primary: #b45309;
+  --primary-hover: #92400e;
+  --highlight-bg: rgba(180, 83, 9, 0.12);
+  --highlight-border: #b45309;
+  --highlight-accent: #92400e;
+  --speaker-badge-bg: #fed7aa;
+  --speaker-badge-text: #9a3412;
+  --narration-badge-bg: #eaddcb;
+  --narration-badge-text: #5c4738;
+  --player-bg: rgba(250, 245, 236, 0.98);
+  --bottom-nav-bg: rgba(250, 245, 236, 0.98);
+  --bottom-nav-active: #b45309;
+  --modal-bg: #faf5ec;
+  --modal-header-border: #e2d4c0;
+  --input-bg: #f2e9dc;
+  --input-border: #d6c4ad;
+  --input-text: #2e2319;
+  --hero-bg: linear-gradient(135deg, #fef3c7 0%, #faf5ec 60%, #ffedd5 100%);
+  --hero-border: #fcd34d;
+  background-color: #f5ede1;
+  color: #2e2319;
+}
+
+/* ==============================================
+   ライト系テーマ (Paper & Sepia) 総合適応ルール
+   ============================================== */
+body.theme-paper,
+body.theme-sepia {
+  color-scheme: light;
+}
+
+body.theme-paper [class*="bg-slate-950"],
+body.theme-sepia [class*="bg-slate-950"] {
+  background-color: var(--card-secondary) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-paper [class*="bg-slate-900"],
+body.theme-sepia [class*="bg-slate-900"] {
+  background-color: var(--card-dark) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-paper [class*="bg-slate-800"],
+body.theme-sepia [class*="bg-slate-800"] {
+  background-color: var(--card-secondary) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-paper [class*="bg-slate-700"],
+body.theme-sepia [class*="bg-slate-700"] {
+  background-color: var(--card-hover) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-paper #aozoraReadingModeBanner,
+body.theme-paper #beginnerQuickStartCard {
+  background-image: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #ecfdf5 100%) !important;
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.theme-sepia #aozoraReadingModeBanner,
+body.theme-sepia #beginnerQuickStartCard {
+  background-image: linear-gradient(135deg, #f3e8d2 0%, #ede0c4 50%, #e6d5b8 100%) !important;
+  background-color: #f3e8d2 !important;
+  border-color: #c8b698 !important;
+}
+
+body.theme-paper [class*="border-slate-"],
+body.theme-sepia [class*="border-slate-"] {
+  border-color: var(--border-dark) !important;
+}
+
+body.theme-paper [class*="text-slate-100"],
+body.theme-paper [class*="text-slate-200"],
+body.theme-paper [class*="text-slate-300"],
+body.theme-sepia [class*="text-slate-100"],
+body.theme-sepia [class*="text-slate-200"],
+body.theme-sepia [class*="text-slate-300"] {
+  color: var(--text-main) !important;
+}
+
+body.theme-paper [class*="text-slate-400"],
+body.theme-paper [class*="text-slate-500"],
+body.theme-sepia [class*="text-slate-400"],
+body.theme-sepia [class*="text-slate-500"] {
+  color: var(--text-muted) !important;
+}
+
+body.theme-paper [class*="text-slate-600"],
+body.theme-sepia [class*="text-slate-600"] {
+  color: var(--text-sub) !important;
+}
+
+/* 設定モーダル: アプリ内包LLMカード — テーマ横断で十分なコントラストを保証 */
+.settings-engine-card .engine-card-title {
+  color: #f1f5f9;
+}
+.settings-engine-card .engine-card-desc {
+  color: #cbd5e1;
+}
+.settings-engine-card .engine-card-muted {
+  color: #94a3b8;
+}
+.settings-engine-card .engine-card-icon {
+  color: #60a5fa;
+}
+.settings-engine-card .engine-card-icon-cyan {
+  color: #22d3ee;
+}
+.settings-engine-card .engine-card-divider {
+  border-color: rgba(148, 163, 184, 0.35);
+}
+.settings-scan-limit-badge {
+  color: #67e8f9;
+  background-color: rgba(8, 51, 68, 0.65);
+  border-color: rgba(34, 211, 238, 0.35);
+}
+
+body.theme-paper #fieldGroupEmbedded.settings-engine-card,
+body.theme-sepia #fieldGroupEmbedded.settings-engine-card {
+  background-color: #dbeafe !important; /* blue-100 — 本文との差を確保 */
+  border-color: #60a5fa !important;
+  color: #0f172a !important;
+}
+body.theme-paper .settings-engine-card .engine-card-title,
+body.theme-sepia .settings-engine-card .engine-card-title {
+  color: #0f172a !important; /* slate-900 */
+}
+body.theme-paper .settings-engine-card .engine-card-desc,
+body.theme-sepia .settings-engine-card .engine-card-desc {
+  color: #1e293b !important; /* slate-800 */
+}
+body.theme-paper .settings-engine-card .engine-card-muted,
+body.theme-sepia .settings-engine-card .engine-card-muted {
+  color: #334155 !important; /* slate-700 */
+}
+body.theme-paper .settings-engine-card .engine-card-icon,
+body.theme-sepia .settings-engine-card .engine-card-icon {
+  color: #1d4ed8 !important;
+}
+body.theme-paper .settings-engine-card .engine-card-icon-cyan,
+body.theme-sepia .settings-engine-card .engine-card-icon-cyan {
+  color: #0e7490 !important;
+}
+body.theme-paper .settings-engine-card .engine-card-divider,
+body.theme-sepia .settings-engine-card .engine-card-divider {
+  border-color: #93c5fd !important;
+}
+body.theme-paper #localLlmStatusBadge,
+body.theme-sepia #localLlmStatusBadge {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #6ee7b7 !important;
+}
+body.theme-paper .settings-scan-limit-badge,
+body.theme-sepia .settings-scan-limit-badge {
+  color: #155e75 !important;
+  background-color: #ecfeff !important;
+  border-color: #67e8f9 !important;
+}
+body.theme-paper #localLlmProgressMsg,
+body.theme-sepia #localLlmProgressMsg {
+  color: #334155 !important;
+}
+
+/* Reader container and pane direct styles */
+body.theme-paper #playerMiddlePane,
+body.theme-sepia #playerMiddlePane {
+  background-color: var(--card-secondary) !important;
+  border-color: var(--border-dark) !important;
+}
+
+body.theme-paper #playerBottomAdPane,
+body.theme-sepia #playerBottomAdPane {
+  background-color: var(--card-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+body.theme-paper #adBannerContentContainer,
+body.theme-sepia #adBannerContentContainer {
+  background-color: var(--card-secondary) !important;
+  border-color: var(--border-dark) !important;
+}
+
+body.theme-paper header,
+body.theme-paper .player-bar,
+body.theme-paper .bottom-nav-bar,
+body.theme-paper .mini-player-bar,
+body.theme-sepia header,
+body.theme-sepia .player-bar,
+body.theme-sepia .bottom-nav-bar,
+body.theme-sepia .mini-player-bar {
+  background-color: var(--player-bg) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Floating App Header (Fixed at top, Glassmorphic & Bright) */
+.floating-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.theme-paper .floating-header {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
+}
+
+body.theme-paper .floating-header h1 {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.theme-sepia .floating-header {
+  background-color: rgba(250, 245, 236, 0.96) !important;
+  border-bottom: 1px solid #e2d4c0 !important;
+  box-shadow: 0 4px 16px -2px rgba(78, 52, 22, 0.06), 0 2px 4px -1px rgba(78, 52, 22, 0.03) !important;
+}
+
+body.theme-sepia .floating-header h1 {
+  background: linear-gradient(135deg, #92400e 0%, #b45309 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.theme-dark .floating-header {
+  background-color: rgba(18, 25, 38, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.theme-oled .floating-header {
+  background-color: rgba(0, 0, 0, 0.96) !important;
+  border-bottom: 1px solid #222530 !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Guide Button (#headerManualBtn) High Contrast */
+body.theme-paper #headerManualBtn {
+  background-color: #e0f2fe !important;
+  border: 1px solid #38bdf8 !important;
+  color: #0369a1 !important;
+  box-shadow: 0 1px 4px rgba(14, 165, 233, 0.15) !important;
+}
+body.theme-paper #headerManualBtn i {
+  color: #0284c7 !important;
+}
+body.theme-paper #headerManualBtn span {
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+}
+
+body.theme-sepia #headerManualBtn {
+  background-color: #fef3c7 !important;
+  border: 1px solid #f59e0b !important;
+  color: #92400e !important;
+  box-shadow: 0 1px 4px rgba(180, 83, 9, 0.15) !important;
+}
+body.theme-sepia #headerManualBtn i {
+  color: #b45309 !important;
+}
+body.theme-sepia #headerManualBtn span {
+  color: #92400e !important;
+  font-weight: 700 !important;
+}
+
+body.theme-dark #headerManualBtn {
+  background-color: rgba(6, 182, 212, 0.15) !important;
+  border: 1px solid rgba(6, 182, 212, 0.45) !important;
+  color: #67e8f9 !important;
+  box-shadow: 0 1px 4px rgba(6, 182, 212, 0.15) !important;
+}
+body.theme-dark #headerManualBtn i {
+  color: #22d3ee !important;
+}
+body.theme-dark #headerManualBtn span {
+  color: #67e8f9 !important;
+  font-weight: 700 !important;
+}
+
+body.theme-oled #headerManualBtn {
+  background-color: #082f49 !important;
+  border: 1px solid #0284c7 !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25) !important;
+}
+body.theme-oled #headerManualBtn i {
+  color: #38bdf8 !important;
+}
+body.theme-oled #headerManualBtn span {
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+}
+
+/* Settings Button in Header */
+body.theme-paper #headerSettingsBtn {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+body.theme-sepia #headerSettingsBtn {
+  background-color: #faf5ec !important;
+  border-color: #d6c4ad !important;
+  color: #451a03 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+body.theme-dark #headerSettingsBtn {
+  background-color: #121926 !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+body.theme-oled #headerSettingsBtn {
+  background-color: #0c0d12 !important;
+  border-color: #27272a !important;
+  color: #ffffff !important;
+}
+
+/* ==============================================
+   🎧 プレイヤー上部ペイン (High-Contrast Theme Adaptation)
+   ============================================== */
+#playerTopPane {
+  background-color: var(--card-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+#playerSubtitle {
+  color: var(--text-main) !important;
+}
+
+/* Novel Title */
+body.theme-paper #playerNovelTitle {
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia #playerNovelTitle {
+  color: #92400e !important;
+  font-weight: 700 !important;
+}
+body.theme-dark #playerNovelTitle,
+body.theme-oled #playerNovelTitle {
+  color: #60a5fa !important;
+}
+
+/* AI Status Badge */
+body.theme-paper #playerAiStatusBadge {
+  background-color: #e0e7ff !important;
+  color: #3730a3 !important;
+  border: 1px solid #a5b4fc !important;
+  font-weight: 700 !important;
+}
+body.theme-paper #playerAiStatusBadge i {
+  color: #4f46e5 !important;
+}
+body.theme-sepia #playerAiStatusBadge {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fcd34d !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia #playerAiStatusBadge i {
+  color: #b45309 !important;
+}
+
+/* Current Playing Speaker Badge */
+body.theme-paper #currentPlayingSpeaker {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border: 1px solid #93c5fd !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia #currentPlayingSpeaker {
+  background-color: #fed7aa !important;
+  color: #9a3412 !important;
+  border: 1px solid #fdba74 !important;
+  font-weight: 700 !important;
+}
+
+/* VOICEVOX Credit Badge */
+body.theme-paper #voicevoxCreditBadge {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border: 1px solid #6ee7b7 !important;
+  font-weight: 700 !important;
+}
+body.theme-paper #voicevoxCreditBadge i {
+  color: #059669 !important;
+}
+body.theme-sepia #voicevoxCreditBadge {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border: 1px solid #a7f3d0 !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia #voicevoxCreditBadge i {
+  color: #059669 !important;
+}
+
+/* Voicevox Audio Cache Status Bar */
+body.theme-paper #playerAudioCacheStatusBar {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+body.theme-sepia #playerAudioCacheStatusBar {
+  background-color: #faf5ec !important;
+  border: 1px solid #e2d4c0 !important;
+}
+body.theme-paper #playerAudioCacheStatusText,
+body.theme-sepia #playerAudioCacheStatusText {
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+}
+body.theme-paper #playerAudioCachePercentText {
+  color: #7e22ce !important;
+  font-weight: 800 !important;
+}
+body.theme-sepia #playerAudioCachePercentText {
+  color: #86198f !important;
+  font-weight: 800 !important;
+}
+
+/* Voicevox Cache Start Button */
+body.theme-paper #playerAudioCacheStartBtn {
+  background-color: #f3e8ff !important;
+  border: 1px solid #c084fc !important;
+  color: #6b21a8 !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia #playerAudioCacheStartBtn {
+  background-color: #fae8ff !important;
+  border: 1px solid #e879f9 !important;
+  color: #701a75 !important;
+  font-weight: 700 !important;
+}
+body.theme-paper #playerAudioCacheStartBtn i,
+body.theme-sepia #playerAudioCacheStartBtn i {
+  color: #d97706 !important;
+}
+
+/* Playback Speed Toggle & Typography Modal Button */
+body.theme-paper #playbackSpeedToggleBtn,
+body.theme-paper #playerTopPane button[onclick*="openTypographyModal"],
+body.theme-paper #playerTopPane button[onclick*="switchTab('cast')"],
+body.theme-paper #playerTopPane button[onclick*="jumpSegment"] {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+body.theme-sepia #playbackSpeedToggleBtn,
+body.theme-sepia #playerTopPane button[onclick*="openTypographyModal"],
+body.theme-sepia #playerTopPane button[onclick*="switchTab('cast')"],
+body.theme-sepia #playerTopPane button[onclick*="jumpSegment"] {
+  background-color: #faf5ec !important;
+  border: 1px solid #d6c4ad !important;
+  color: #2e2319 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Auto-Scroll Button High Contrast */
+body.theme-paper #autoScrollBtn {
+  background-color: #dbeafe !important;
+  border: 1px solid #3b82f6 !important;
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.15) !important;
+}
+body.theme-paper #autoScrollBtn i {
+  color: #2563eb !important;
+}
+body.theme-sepia #autoScrollBtn {
+  background-color: #ffedd5 !important;
+  border: 1px solid #f97316 !important;
+  color: #c2410c !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 3px rgba(234, 88, 12, 0.15) !important;
+}
+body.theme-sepia #autoScrollBtn i {
+  color: #ea580c !important;
+}
+body.theme-dark #autoScrollBtn {
+  background-color: rgba(59, 130, 246, 0.25) !important;
+  border: 1px solid rgba(59, 130, 246, 0.6) !important;
+  color: #bfdbfe !important;
+  font-weight: 700 !important;
+}
+body.theme-oled #autoScrollBtn {
+  background-color: #1e3a8a !important;
+  border: 1px solid #3b82f6 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+body.theme-paper .bottom-sheet-content,
+body.theme-sepia .bottom-sheet-content {
+  background-color: var(--modal-bg) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-main) !important;
+}
+
+/* ==============================================
+   🎛️ 朗読タブ 再生位置スライドバー (Player Seek Slider)
+   ============================================== */
+#playerSeekSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #334155;
+  outline: none;
+  border-radius: 9999px;
+}
+#playerSeekSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.5);
+  border: 2px solid #ffffff;
+}
+body.theme-paper #playerSeekSlider {
+  background: #cbd5e1 !important;
+}
+body.theme-paper #playerSeekSlider::-webkit-slider-thumb {
+  background: #2563eb !important;
+  border: 2px solid #ffffff !important;
+}
+body.theme-paper #playerSeekPositionText {
+  color: #1d4ed8 !important;
+}
+body.theme-paper #playerSeekPercentText {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border-color: #bae6fd !important;
+}
+
+body.theme-sepia #playerSeekSlider {
+  background: #d6c4ad !important;
+}
+body.theme-sepia #playerSeekSlider::-webkit-slider-thumb {
+  background: #d97706 !important;
+  border: 2px solid #faf5ec !important;
+}
+body.theme-sepia #playerSeekPositionText {
+  color: #b45309 !important;
+}
+body.theme-sepia #playerSeekPercentText {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fde68a !important;
+}
+
+/* ==============================================
+   🚫 再生不可時のボタン暗転・無効化 (Disabled Playback Controls) - 高コントラスト視認性保証
+   ============================================== */
+.btn-playback-disabled,
+button:disabled.btn-playback-disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+}
+body.theme-paper .btn-playback-disabled {
+  background: #e2e8f0 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+body.theme-paper .btn-playback-disabled *,
+body.theme-paper .btn-playback-disabled i,
+body.theme-paper .btn-playback-disabled span {
+  color: #334155 !important;
+  fill: #334155 !important;
+}
+
+body.theme-sepia .btn-playback-disabled {
+  background: #ede2d5 !important;
+  border: 1px solid #d5c8b8 !important;
+  color: #443527 !important;
+}
+body.theme-sepia .btn-playback-disabled *,
+body.theme-sepia .btn-playback-disabled i,
+body.theme-sepia .btn-playback-disabled span {
+  color: #443527 !important;
+  fill: #443527 !important;
+}
+
+body.theme-dark .btn-playback-disabled {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #94a3b8 !important;
+}
+body.theme-dark .btn-playback-disabled *,
+body.theme-dark .btn-playback-disabled i,
+body.theme-dark .btn-playback-disabled span {
+  color: #94a3b8 !important;
+  fill: #94a3b8 !important;
+}
+
+body.theme-oled .btn-playback-disabled {
+  background: #121212 !important;
+  border: 1px solid #27272a !important;
+  color: #a1a1aa !important;
+}
+body.theme-oled .btn-playback-disabled *,
+body.theme-oled .btn-playback-disabled i,
+body.theme-oled .btn-playback-disabled span {
+  color: #a1a1aa !important;
+  fill: #a1a1aa !important;
+}
+
+/* ==============================================
+   💾 保存済タブ (Downloads Tab) Theme Adaptations
+   ============================================== */
+body.theme-paper #tab-downloads .bg-slate-900,
+body.theme-paper #tab-downloads .bg-slate-900\/80,
+body.theme-paper #tab-downloads .bg-slate-950,
+body.theme-paper #tab-downloads .bg-slate-950\/60 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+body.theme-paper #tab-downloads h2,
+body.theme-paper #tab-downloads h3,
+body.theme-paper #tab-downloads h4,
+body.theme-paper #tab-downloads .text-slate-100,
+body.theme-paper #tab-downloads .text-slate-200 {
+  color: #0f172a !important;
+}
+body.theme-paper #tab-downloads .text-slate-400 {
+  color: #475569 !important;
+}
+body.theme-paper #tab-downloads button[onclick*="loadDownloadsData"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+body.theme-sepia #tab-downloads .bg-slate-900,
+body.theme-sepia #tab-downloads .bg-slate-900\/80,
+body.theme-sepia #tab-downloads .bg-slate-950,
+body.theme-sepia #tab-downloads .bg-slate-950\/60 {
+  background-color: #f4ecdc !important;
+  border-color: #e2d4c0 !important;
+  color: #2e2319 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+body.theme-sepia #tab-downloads h2,
+body.theme-sepia #tab-downloads h3,
+body.theme-sepia #tab-downloads h4,
+body.theme-sepia #tab-downloads .text-slate-100,
+body.theme-sepia #tab-downloads .text-slate-200 {
+  color: #2e2319 !important;
+}
+body.theme-sepia #tab-downloads .text-slate-400 {
+  color: #6c5844 !important;
+}
+body.theme-sepia #tab-downloads button[onclick*="loadDownloadsData"] {
+  background-color: #ede3d0 !important;
+  border-color: #d6c4ad !important;
+  color: #451a03 !important;
+}
+
+
+/* Theme picker button preview contrast */
+#themeBtn-dark {
+  background-color: #121926 !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+#themeBtn-dark span {
+  color: #f1f5f9 !important;
+}
+#themeBtn-oled {
+  background-color: #000000 !important;
+  border-color: #27272a !important;
+  color: #ffffff !important;
+}
+#themeBtn-oled span {
+  color: #ffffff !important;
+}
+#themeBtn-sepia {
+  background-color: #faf5ec !important;
+  border-color: #e2d4c0 !important;
+  color: #2e2319 !important;
+}
+#themeBtn-sepia span {
+  color: #2e2319 !important;
+}
+#themeBtn-paper {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+#themeBtn-paper span {
+  color: #1e293b !important;
+}
+
+/* ==========================================================================
+   読み上げ対象選択タブ (青空文庫 / 文書流し込み) — 選択状態の完全な視覚的明瞭化
+   ========================================================================== */
+.site-tab-btn {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 非選択（非アクティブ）タブ: フラットで控えめな表示 */
+.site-tab-btn:not(.active) {
+  background-color: var(--card-secondary) !important;
+  border: 1.5px solid var(--border-dark) !important;
+  color: var(--text-muted) !important;
+  box-shadow: none !important;
+  opacity: 0.75;
+}
+.site-tab-btn:not(.active) i {
+  color: var(--text-muted) !important;
+}
+.site-tab-btn:not(.active):hover {
+  opacity: 1;
+  color: var(--text-main) !important;
+  border-color: var(--border-accent) !important;
+}
+.site-tab-btn:not(.active):hover i {
+  color: var(--text-main) !important;
+}
+
+/* 選択（アクティブ）タブ: 青空文庫 (エメラルドグリーン) */
+#siteTab-aozora.active {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  border: 1.5px solid #047857 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.38) !important;
+  opacity: 1 !important;
+  transform: translateY(-1px);
+}
+#siteTab-aozora.active i {
+  color: #ffffff !important;
+}
+
+/* 選択（アクティブ）タブ: 文書流し込み (ロイヤルブルー) */
+#siteTab-document.active {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  border: 1.5px solid #1d4ed8 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.38) !important;
+  opacity: 1 !important;
+  transform: translateY(-1px);
+}
+#siteTab-document.active i {
+  color: #ffffff !important;
+}
+
+/* テーマ別 非アクティブ調整 (Paper / Sepia) */
+body.theme-paper .site-tab-btn:not(.active) {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #64748b !important;
+}
+body.theme-paper .site-tab-btn:not(.active) i {
+  color: #64748b !important;
+}
+
+body.theme-sepia .site-tab-btn:not(.active) {
+  background-color: #ede1d0 !important;
+  border-color: #d6c4ad !important;
+  color: #6e5a48 !important;
+}
+body.theme-sepia .site-tab-btn:not(.active) i {
+  color: #6e5a48 !important;
+}
+
+/* VOICEVOX cache progress banner adaptive theming */
+body.theme-paper #voicevoxCacheStatusBanner,
+body.theme-sepia #voicevoxCacheStatusBanner {
+  background-color: var(--card-secondary) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-paper input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+body.theme-paper select,
+body.theme-paper textarea,
+body.theme-sepia input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+body.theme-sepia select,
+body.theme-sepia textarea {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--input-text) !important;
+}
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Safe Area Insets Utilities */
+.safe-top {
+  padding-top: max(1.25rem, calc(env(safe-area-inset-top, 0px) + 0.5rem));
+}
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0.75rem));
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==============================================
+   4大日本語フォント定義
+   ============================================== */
+.font-shippori {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', "Yu Mincho", serif;
+  letter-spacing: 0.04em;
+}
+.font-noto-serif {
+  font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+  letter-spacing: 0.03em;
+}
+.font-noto-sans {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.015em;
+}
+.font-kaisei {
+  font-family: 'Kaisei Decol', 'Kaisei Tokumin', 'Shippori Mincho', serif;
+  letter-spacing: 0.035em;
+}
+
+/* Reader Typography Sizes */
+.reader-text-xs { font-size: 0.85rem; line-height: 1.65; }
+.reader-text-sm { font-size: 0.95rem; line-height: 1.75; }
+.reader-text-md { font-size: 1.075rem; line-height: 1.9; }
+.reader-text-lg { font-size: 1.25rem; line-height: 2.05; }
+.reader-text-xl { font-size: 1.45rem; line-height: 2.2; }
+.reader-text-2xl { font-size: 1.65rem; line-height: 2.35; }
+
+/* Line Height Variants */
+.reader-lh-tight { line-height: 1.6 !important; }
+.reader-lh-normal { line-height: 1.9 !important; }
+.reader-lh-loose { line-height: 2.3 !important; }
+
+/* Letter Spacing Variants */
+.reader-ls-tight { letter-spacing: 0.01em !important; }
+.reader-ls-normal { letter-spacing: 0.04em !important; }
+.reader-ls-wide { letter-spacing: 0.08em !important; }
+
+/* Ruby (振り仮名) 組版 */
+ruby {
+  ruby-align: center;
+}
+rt {
+  font-size: 0.58em;
+  opacity: 0.88;
+  user-select: none;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ==============================================
+   縦書き表示モード (Traditional Vertical-RL)
+   ============================================== */
+.vertical-reader {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  text-orientation: upright;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: calc(100vh - 380px);
+  min-height: 240px;
+  padding: 1rem 0.5rem;
+  white-space: normal;
+}
+.vertical-reader .segment-card {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1.25rem;
+  margin-bottom: 0;
+  width: auto;
+  max-height: 100%;
+  scroll-margin-right: 80px;
+  scroll-margin-left: 80px;
+}
+.vertical-reader .segment-card p {
+  letter-spacing: 0.08em;
+  line-height: 2.1;
+}
+
+/* ==============================================
+   48dp エルゴノミクス・タッチターゲット保証
+   ============================================== */
+.touch-target-48 {
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav-bar {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: var(--bottom-nav-bg);
+  border-top: 1px solid var(--border-dark);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  min-height: 48px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+.bottom-nav-item:active {
+  transform: scale(0.92);
+}
+.bottom-nav-item.active {
+  color: var(--bottom-nav-active, #3b82f6) !important;
+  font-weight: 700;
+}
+.bottom-nav-item.active .nav-icon-wrapper {
+  background-color: var(--highlight-bg, rgba(59, 130, 246, 0.2));
+  border-radius: 9999px;
+  padding: 2px 14px;
+  transform: scale(1.05);
+}
+
+.bottom-nav-item .nav-tab-label {
+  font-size: 9.5px;
+  line-height: 1.1;
+  white-space: nowrap;
+  letter-spacing: -0.025em;
+}
+
+/* ボトムナビ集約カーモードボタン専用アクセント */
+#tabBtn-carmode .nav-icon-wrapper i {
+  color: #f59e0b;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+#tabBtn-carmode:active .nav-icon-wrapper i {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
+}
+body.theme-paper #tabBtn-carmode .nav-tab-label,
+body.theme-sepia #tabBtn-carmode .nav-tab-label {
+  color: #b45309 !important;
+}
+body.theme-dark #tabBtn-carmode .nav-tab-label,
+body.theme-oled #tabBtn-carmode .nav-tab-label {
+  color: #fcd34d !important;
+}
+
+/* Docked Mini Player (Stationed above Bottom Nav) */
+.mini-player-bar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: var(--card-dark);
+  border: 1px solid var(--border-dark);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+.mini-player-bar:active {
+  transform: scale(0.99);
+}
+
+/* Bottom Sheet Modal */
+.bottom-sheet-content {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-height: 88vh;
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 1.25rem));
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Reader Segments */
+#playerMiddlePane {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y pinch-zoom !important;
+  overscroll-behavior-y: auto !important;
+}
+
+#playerMiddlePane:has(.vertical-reader) {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  touch-action: pan-x pan-y pinch-zoom !important;
+}
+
+#segmentsContainer {
+  touch-action: pan-y pinch-zoom !important;
+}
+
+#segmentsContainer.vertical-reader {
+  touch-action: pan-x pan-y pinch-zoom !important;
+}
+
+.segment-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--card-dark);
+  border: 1px solid var(--border-dark);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  scroll-margin-top: 80px;
+  scroll-margin-bottom: 120px;
+  touch-action: pan-y pinch-zoom !important;
+}
+
+.vertical-reader .segment-card,
+.vertical-reader .segment-card * {
+  touch-action: pan-x pan-y pinch-zoom !important;
+}
+
+.segment-card *,
+.segment-card .segment-text,
+.segment-card .segment-bilingual-sub,
+.segment-card p,
+.segment-card span,
+.segment-card div,
+.segment-card button {
+  touch-action: pan-y pinch-zoom !important;
+}
+
+.segment-card .segment-text,
+.segment-card p {
+  color: var(--text-main) !important;
+}
+
+.segment-card.segment-dialogue {
+  border-left: 4px solid var(--char-color, var(--primary)) !important;
+  background-color: rgba(37, 99, 235, 0.03);
+}
+
+.segment-card.segment-dialogue .speaker-badge {
+  background-color: color-mix(in srgb, var(--char-color, var(--primary)) 18%, transparent) !important;
+  color: var(--char-color, var(--primary)) !important;
+  border: 1px solid color-mix(in srgb, var(--char-color, var(--primary)) 35%, transparent) !important;
+}
+
+body.theme-paper .segment-card.segment-dialogue .speaker-badge {
+  background-color: color-mix(in srgb, var(--char-color, var(--primary)) 12%, white) !important;
+  color: color-mix(in srgb, var(--char-color, var(--primary)) 85%, black) !important;
+  border: 1px solid color-mix(in srgb, var(--char-color, var(--primary)) 30%, white) !important;
+}
+
+body.theme-sepia .segment-card.segment-dialogue .speaker-badge {
+  background-color: color-mix(in srgb, var(--char-color, var(--primary)) 14%, #faf5ec) !important;
+  color: color-mix(in srgb, var(--char-color, var(--primary)) 80%, #2e2319) !important;
+  border: 1px solid color-mix(in srgb, var(--char-color, var(--primary)) 35%, #e2d4c0) !important;
+}
+
+.segment-card:active {
+  transform: none;
+}
+
+.segment-card.active {
+  background-color: var(--highlight-bg) !important;
+  border-color: var(--highlight-border) !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.18);
+  transform: none !important; /* ジッター防止 */
+}
+
+.segment-card.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4.5px;
+  background: var(--highlight-border);
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+/* アクティブ再生時: セリフはキャラ色で発光、ナレーションは落ち着いたバッジ */
+.segment-card.active.segment-dialogue .speaker-badge {
+  background-color: var(--char-color, var(--primary)) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--char-color, var(--primary)) 40%, transparent);
+}
+
+.segment-card.active.segment-narration .speaker-badge {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Intra-segment Karaoke Progress Bar */
+.segment-card .karaoke-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--highlight-border);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Media Player Ergonomics: Play/Pause Pulsing Aura */
+.playing-aura {
+  animation: playPulseAura 2.2s infinite ease-in-out !important;
+}
+@keyframes playPulseAura {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.45), 0 10px 25px -5px rgba(37, 99, 235, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0), 0 12px 28px -4px rgba(37, 99, 235, 0.7);
+  }
+}
+
+/* Dialogue vs Narration Styling */
+.badge-dialogue {
+  background-color: var(--speaker-badge-bg);
+  color: var(--speaker-badge-text);
+  border: 1px solid var(--border-dark);
+}
+
+.badge-narration {
+  background-color: var(--narration-badge-bg);
+  color: var(--narration-badge-text);
+  border: 1px solid var(--border-dark);
+}
+
+/* Theme Paper Segment Cards */
+body.theme-paper .segment-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+body.theme-paper .segment-card .segment-text,
+body.theme-paper .segment-card p {
+  color: #0f172a !important;
+}
+body.theme-paper .segment-card.segment-dialogue {
+  background-color: #f8faff !important;
+  border-left: 3.5px solid #2563eb !important;
+}
+body.theme-paper .segment-card.active {
+  background-color: #eff6ff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.16) !important;
+}
+body.theme-paper .segment-card.active .segment-text,
+body.theme-paper .segment-card.active p {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+/* Theme Sepia Segment Cards */
+body.theme-sepia .segment-card {
+  background-color: #faf5ec !important;
+  border-color: #e2d4c0 !important;
+}
+body.theme-sepia .segment-card .segment-text,
+body.theme-sepia .segment-card p {
+  color: #2e2319 !important;
+}
+body.theme-sepia .segment-card.segment-dialogue {
+  background-color: #fffbf2 !important;
+  border-left: 3.5px solid #d97706 !important;
+}
+body.theme-sepia .segment-card.active {
+  background-color: #fef3c7 !important;
+  border-color: #d97706 !important;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.16) !important;
+}
+body.theme-sepia .segment-card.active .segment-text,
+body.theme-sepia .segment-card.active p {
+  color: #1c130b !important;
+  font-weight: 600 !important;
+}
+
+/* Theme Selection & Typography Pills */
+.theme-select-btn {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.theme-select-btn.active {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px var(--primary) !important;
+  transform: translateY(-2px);
+}
+
+.font-select-btn {
+  background-color: var(--card-secondary) !important;
+  border: 1px solid var(--border-dark) !important;
+  color: var(--text-main) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.font-select-btn p:first-child {
+  color: var(--text-main) !important;
+}
+.font-select-btn p:last-child {
+  color: var(--text-muted) !important;
+}
+.font-select-btn.active {
+  border-color: var(--primary) !important;
+  background-color: var(--highlight-bg) !important;
+  box-shadow: 0 0 0 1.5px var(--primary), 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+.font-select-btn.active i {
+  color: var(--primary) !important;
+}
+
+.size-select-pill,
+.lh-select-pill,
+.ls-select-pill {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text-muted);
+  background-color: transparent;
+}
+.size-select-pill.active,
+.lh-select-pill.active,
+.ls-select-pill.active {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Full Player Floating Controller */
+.player-bar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: var(--player-bg);
+  border-top: 1px solid var(--border-dark);
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0.75rem));
+}
+
+/* Touch Friendly Elements */
+button, input, select, a {
+  touch-action: manipulation;
+}
+
+/* Resume Auto-scroll Float Button */
+#resumeAutoScrollBtn {
+  position: fixed;
+  bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  right: 1.25rem;
+  z-index: 45;
+  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.5);
+  animation: pulseFab 2.5s infinite;
+}
+
+@keyframes pulseFab {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Button Disabled Styles */
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Custom scrollbar styling for TOC / Episode lists */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 1);
+}
+
+/* ==============================================
+   デスクトップ デュアルペイン分割表示 (1024px+)
+   ============================================== */
+@media (min-width: 1024px) {
+  body.desktop-dual-pane #tab-player {
+    display: grid !important;
+    grid-template-columns: 360px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+  body.desktop-dual-pane #desktopSidePane {
+    display: block !important;
+    position: sticky;
+    top: 5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+  body.desktop-dual-pane #floatingPlayerBar {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 1.25rem;
+    bottom: 1.25rem;
+    border: 1px solid var(--border-dark);
+  }
+}
+
+/* ==============================================
+   🚗 ドライブモード (Car Mode) 全画面UI テーマ別適応
+   ============================================== */
+#carModeOverlay {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-main) !important;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#carModeTitle {
+  color: var(--text-main) !important;
+}
+
+#carModeEpisode {
+  color: var(--primary) !important;
+}
+
+body.theme-paper #carModeEpisode,
+body.theme-sepia #carModeEpisode {
+  color: #b45309 !important;
+}
+body.theme-dark #carModeEpisode,
+body.theme-oled #carModeEpisode {
+  color: #fbbf24 !important;
+}
+
+#carModeCurrentText {
+  color: var(--text-main) !important;
+}
+
+#carModeSpeaker {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+  color: #fde68a !important;
+}
+body.theme-paper #carModeSpeaker {
+  background-color: #fef3c7 !important;
+  border: 1.5px solid #d97706 !important;
+  color: #78350f !important;
+}
+body.theme-sepia #carModeSpeaker {
+  background-color: #faebd7 !important;
+  border: 1.5px solid #b45309 !important;
+  color: #78350f !important;
+}
+
+#carModeProgressTrack {
+  background-color: var(--border-dark) !important;
+}
+
+/* カーモード: 親指向け太いシークスライダー */
+.car-mode-seek-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--border-dark, #334155);
+  outline: none;
+  accent-color: #f59e0b;
+}
+.car-mode-seek-slider::-webkit-slider-runnable-track {
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--border-dark, #334155);
+}
+.car-mode-seek-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 36px;
+  height: 36px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
+  cursor: pointer;
+}
+.car-mode-seek-slider::-moz-range-track {
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--border-dark, #334155);
+}
+.car-mode-seek-slider::-moz-range-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
+  cursor: pointer;
+}
+.car-mode-seek-slider:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+body.theme-paper .car-mode-seek-slider,
+body.theme-sepia .car-mode-seek-slider {
+  accent-color: #d97706;
+}
+
+#carModeSafetyText {
+  color: var(--text-muted) !important;
+}
+
+/* Exit Button in Car Mode */
+body.theme-paper #carModeExitBtn {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+body.theme-sepia #carModeExitBtn {
+  background-color: #faf5ec !important;
+  border: 1px solid #d6c4ad !important;
+  color: #451a03 !important;
+}
+body.theme-dark #carModeExitBtn {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #cbd5e1 !important;
+}
+body.theme-oled #carModeExitBtn {
+  background-color: #0c0d12 !important;
+  border: 1px solid #27272a !important;
+  color: #ffffff !important;
+}
+
+/* Prev / Next Big Buttons */
+body.theme-paper .car-mode-nav-btn {
+  background-color: #ffffff !important;
+  border: 2px solid #e2e8f0 !important;
+  color: #1e293b !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
+}
+body.theme-paper .car-mode-nav-btn span {
+  color: #475569 !important;
+}
+
+body.theme-sepia .car-mode-nav-btn {
+  background-color: #faf5ec !important;
+  border: 2px solid #e2d4c0 !important;
+  color: #2e2319 !important;
+  box-shadow: 0 10px 25px -5px rgba(78, 52, 22, 0.08) !important;
+}
+body.theme-sepia .car-mode-nav-btn span {
+  color: #6e5a48 !important;
+}
+
+body.theme-dark .car-mode-nav-btn {
+  background-color: #1e293b !important;
+  border: 2px solid #334155 !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+body.theme-dark .car-mode-nav-btn span {
+  color: #cbd5e1 !important;
+}
+
+body.theme-oled .car-mode-nav-btn {
+  background-color: #0c0d12 !important;
+  border: 2px solid #27272a !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8) !important;
+}
+body.theme-oled .car-mode-nav-btn span {
+  color: #a1a1aa !important;
+}
+
+/* ==============================================
+   🔍 探すタブ (Search & Discovery) Theme Adaptations
+   ============================================== */
+
+/* --- Paper Theme --- */
+body.theme-paper #tab-search .bg-slate-900,
+body.theme-paper #tab-search .bg-slate-900\/60,
+body.theme-paper #tab-search .bg-slate-950,
+body.theme-paper #tab-search .bg-slate-950\/80,
+body.theme-paper #tab-search .bg-slate-950\/60 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+body.theme-paper #tab-search input,
+body.theme-paper #tab-search select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+body.theme-paper #tab-search input::placeholder {
+  color: #94a3b8 !important;
+}
+
+body.theme-paper #btnToggleAdvancedFilter,
+body.theme-paper .quick-nav-pill,
+body.theme-paper .recent-search-item,
+body.theme-paper .aozora-author-btn:not(.bg-emerald-600),
+body.theme-paper .site-tab-btn:not(.bg-blue-600):not(.bg-emerald-600):not(.bg-cyan-600):not(.bg-purple-600):not(.bg-amber-600) {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+body.theme-paper .quick-nav-pill:hover,
+body.theme-paper #btnToggleAdvancedFilter:hover {
+  background-color: #e2e8f0 !important;
+}
+
+body.theme-paper .trend-tag-chip {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+body.theme-paper .trend-tag-chip:hover {
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+
+body.theme-paper #clearSearchInputBtn {
+  background-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+body.theme-paper #clearSearchInputBtn:hover {
+  background-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+/* Aozora Master Works Card (Paper) */
+body.theme-paper #aozoraCatalogGrid > div {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+body.theme-paper #aozoraCatalogGrid h4 {
+  color: #0f172a !important;
+}
+body.theme-paper #aozoraCatalogGrid p {
+  color: #475569 !important;
+}
+body.theme-paper #aozoraCatalogGrid p.line-clamp-2 {
+  color: #334155 !important;
+}
+body.theme-paper #aozoraCatalogGrid .font-mono {
+  color: #64748b !important;
+}
+body.theme-paper #aozoraCatalogGrid button[onclick*="openAozoraNovelToc"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+body.theme-paper #aozoraCatalogSection h3 {
+  color: #0f172a !important;
+}
+body.theme-paper #aozoraCatalogSection p {
+  color: #475569 !important;
+}
+
+/* Search Results Card (Paper) */
+body.theme-paper #novelResultsList > div {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+body.theme-paper #novelResultsList h3 {
+  color: #1d4ed8 !important;
+}
+body.theme-paper #novelResultsList h3:hover {
+  color: #1e40af !important;
+}
+body.theme-paper #novelResultsList p {
+  color: #475569 !important;
+}
+body.theme-paper #novelResultsList p.line-clamp-3 {
+  color: #334155 !important;
+}
+body.theme-paper #novelResultsList .font-medium {
+  color: #0f172a !important;
+}
+body.theme-paper #novelResultsList .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+body.theme-paper #novelResultsList button[onclick*="openWebPreviewModal"],
+body.theme-paper #novelResultsList button[onclick*="downloadNovelDirect"],
+body.theme-paper #novelResultsList button[onclick*="loadNovel"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+/* --- Sepia Theme --- */
+body.theme-sepia #tab-search .bg-slate-900,
+body.theme-sepia #tab-search .bg-slate-900\/60,
+body.theme-sepia #tab-search .bg-slate-950,
+body.theme-sepia #tab-search .bg-slate-950\/80,
+body.theme-sepia #tab-search .bg-slate-950\/60 {
+  background-color: #faf5ec !important;
+  border-color: #d6c4ad !important;
+  color: #2e2319 !important;
+}
+
+body.theme-sepia #tab-search input,
+body.theme-sepia #tab-search select {
+  background-color: #fffdfa !important;
+  border-color: #d6c4ad !important;
+  color: #2e2319 !important;
+}
+body.theme-sepia #tab-search input::placeholder {
+  color: #8c7b6c !important;
+}
+
+body.theme-sepia #btnToggleAdvancedFilter,
+body.theme-sepia .quick-nav-pill,
+body.theme-sepia .recent-search-item,
+body.theme-sepia .aozora-author-btn:not(.bg-emerald-600),
+body.theme-sepia .site-tab-btn:not(.bg-blue-600):not(.bg-emerald-600):not(.bg-cyan-600):not(.bg-purple-600):not(.bg-amber-600) {
+  background-color: #f0e6d6 !important;
+  border-color: #d6c4ad !important;
+  color: #2e2319 !important;
+}
+body.theme-sepia .quick-nav-pill:hover,
+body.theme-sepia #btnToggleAdvancedFilter:hover {
+  background-color: #e6d7c3 !important;
+}
+
+body.theme-sepia .trend-tag-chip {
+  background-color: #fcf9f4 !important;
+  border-color: #e2d4c0 !important;
+  color: #5c4d3c !important;
+}
+body.theme-sepia .trend-tag-chip:hover {
+  color: #92400e !important;
+  border-color: #d6c4ad !important;
+}
+
+body.theme-sepia #clearSearchInputBtn {
+  background-color: #d6c4ad !important;
+  color: #4a3b2c !important;
+}
+
+/* Aozora Master Works Card (Sepia) */
+body.theme-sepia #aozoraCatalogGrid > div {
+  background-color: #fffdfa !important;
+  border-color: #d6c4ad !important;
+  box-shadow: 0 2px 8px rgba(78, 52, 22, 0.05) !important;
+}
+body.theme-sepia #aozoraCatalogGrid h4 {
+  color: #2e2319 !important;
+}
+body.theme-sepia #aozoraCatalogGrid p {
+  color: #5c4d3c !important;
+}
+body.theme-sepia #aozoraCatalogGrid p.line-clamp-2 {
+  color: #4a3b2c !important;
+}
+body.theme-sepia #aozoraCatalogGrid .font-mono {
+  color: #786450 !important;
+}
+body.theme-sepia #aozoraCatalogGrid button[onclick*="openAozoraNovelToc"] {
+  background-color: #f0e6d6 !important;
+  border-color: #d6c4ad !important;
+  color: #2e2319 !important;
+}
+body.theme-sepia #aozoraCatalogSection h3 {
+  color: #2e2319 !important;
+}
+body.theme-sepia #aozoraCatalogSection p {
+  color: #5c4d3c !important;
+}
+
+/* Search Results Card (Sepia) */
+body.theme-sepia #novelResultsList > div {
+  background-color: #fffdfa !important;
+  border-color: #d6c4ad !important;
+  box-shadow: 0 2px 8px rgba(78, 52, 22, 0.05) !important;
+}
+body.theme-sepia #novelResultsList h3 {
+  color: #92400e !important;
+}
+body.theme-sepia #novelResultsList h3:hover {
+  color: #78350f !important;
+}
+body.theme-sepia #novelResultsList p {
+  color: #5c4d3c !important;
+}
+body.theme-sepia #novelResultsList p.line-clamp-3 {
+  color: #4a3b2c !important;
+}
+body.theme-sepia #novelResultsList .font-medium {
+  color: #2e2319 !important;
+}
+body.theme-sepia #novelResultsList .bg-slate-800 {
+  background-color: #f0e6d6 !important;
+  color: #5c4d3c !important;
+  border-color: #d6c4ad !important;
+}
+body.theme-sepia #novelResultsList button[onclick*="openWebPreviewModal"],
+body.theme-sepia #novelResultsList button[onclick*="downloadNovelDirect"],
+body.theme-sepia #novelResultsList button[onclick*="loadNovel"] {
+  background-color: #f0e6d6 !important;
+  border-color: #d6c4ad !important;
+  color: #2e2319 !important;
+}
+
+/* ==============================================
+   📖 目次タブ (TOC Tab) & プレミアムリワードバナー Theme Adaptations
+   ============================================== */
+body.theme-paper #tocHeaderCard {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+body.theme-paper #tocTitle {
+  color: #0f172a !important;
+}
+body.theme-paper #tocAuthor {
+  color: #475569 !important;
+}
+body.theme-paper #tab-toc .bg-gradient-to-r:not(#tocPrimaryPlayBtn) {
+  background: linear-gradient(to right, #fffbeb, #fef3c7) !important;
+  border-color: #fde68a !important;
+}
+body.theme-paper #tab-toc .bg-gradient-to-r:not(#tocPrimaryPlayBtn) .text-slate-100 {
+  color: #92400e !important;
+}
+body.theme-paper #tab-toc .bg-gradient-to-r:not(#tocPrimaryPlayBtn) .text-slate-400 {
+  color: #b45309 !important;
+}
+
+body.theme-sepia #tocHeaderCard {
+  background-color: #faf5ec !important;
+  border-color: #d6c4ad !important;
+  color: #2e2319 !important;
+}
+body.theme-sepia #tocTitle {
+  color: #2e2319 !important;
+}
+body.theme-sepia #tocAuthor {
+  color: #5c4d3c !important;
+}
+body.theme-sepia #tab-toc .bg-gradient-to-r:not(#tocPrimaryPlayBtn) {
+  background: linear-gradient(to right, #fef3c7, #fde68a) !important;
+  border-color: #f59e0b !important;
+}
+body.theme-sepia #tab-toc .bg-gradient-to-r:not(#tocPrimaryPlayBtn) .text-slate-100 {
+  color: #78350f !important;
+}
+body.theme-sepia #tab-toc .bg-gradient-to-r:not(#tocPrimaryPlayBtn) .text-slate-400 {
+  color: #92400e !important;
+}
+
+/* 🎯 目次画面 メインCTA「第1話から朗読をはじめる」通常＆無効時コントラスト完全保証 */
+body.theme-paper #tocPrimaryPlayBtn,
+body.theme-sepia #tocPrimaryPlayBtn {
+  background: linear-gradient(to right, #2563eb, #4f46e5) !important;
+  border: 1px solid #1d4ed8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+body.theme-paper #tocPrimaryPlayBtn *,
+body.theme-sepia #tocPrimaryPlayBtn * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+body.theme-paper #tocPrimaryPlayBtn.btn-playback-disabled,
+body.theme-paper #tocPrimaryPlayBtn:disabled,
+body.theme-sepia #tocPrimaryPlayBtn.btn-playback-disabled,
+body.theme-sepia #tocPrimaryPlayBtn:disabled {
+  background: #e2e8f0 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+  box-shadow: none !important;
+  opacity: 0.8 !important;
+}
+body.theme-paper #tocPrimaryPlayBtn.btn-playback-disabled *,
+body.theme-paper #tocPrimaryPlayBtn:disabled *,
+body.theme-sepia #tocPrimaryPlayBtn.btn-playback-disabled *,
+body.theme-sepia #tocPrimaryPlayBtn:disabled * {
+  color: #334155 !important;
+  fill: #334155 !important;
+}
+
+/* ==============================================
+   📖 かんたん使い方ガイド — ライトテーマ全面コントラスト保証 (WCAG AAA)
+   暗いグラデ枠＋白文字のまま paper/sepia で文字だけ濃くすると逆に読めなくなるため、
+   ガイド内の暗面をライト面へ揃え、本文は常に濃色にする
+   ============================================== */
+body.theme-paper #onlineManualModal > div,
+body.theme-sepia #onlineManualModal > div {
+  background-color: var(--modal-bg) !important;
+  color: #0f172a !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* ダーク用グラデーション／濃色パネルをライト面に置換 */
+body.theme-paper #onlineManualModal [class*="bg-gradient-to-"],
+body.theme-sepia #onlineManualModal [class*="bg-gradient-to-"],
+body.theme-paper #onlineManualModal [class*="from-blue-950"],
+body.theme-paper #onlineManualModal [class*="from-indigo-950"],
+body.theme-paper #onlineManualModal [class*="from-purple-950"],
+body.theme-paper #onlineManualModal [class*="via-slate-900"],
+body.theme-paper #onlineManualModal [class*="to-indigo-950"],
+body.theme-paper #onlineManualModal [class*="to-purple-950"],
+body.theme-sepia #onlineManualModal [class*="from-blue-950"],
+body.theme-sepia #onlineManualModal [class*="from-indigo-950"],
+body.theme-sepia #onlineManualModal [class*="from-purple-950"],
+body.theme-sepia #onlineManualModal [class*="via-slate-900"],
+body.theme-sepia #onlineManualModal [class*="to-indigo-950"],
+body.theme-sepia #onlineManualModal [class*="to-purple-950"] {
+  background-image: none !important;
+  background-color: #eef2ff !important; /* indigo-50 系の薄い帯 */
+  border-color: #c7d2fe !important;
+  color: #0f172a !important;
+}
+
+body.theme-paper #onlineManualModal [class*="bg-slate-950"],
+body.theme-paper #onlineManualModal [class*="bg-slate-900"],
+body.theme-paper #onlineManualModal [class*="bg-slate-800"],
+body.theme-paper #onlineManualModal [class*="bg-amber-950"],
+body.theme-sepia #onlineManualModal [class*="bg-slate-950"],
+body.theme-sepia #onlineManualModal [class*="bg-slate-900"],
+body.theme-sepia #onlineManualModal [class*="bg-slate-800"],
+body.theme-sepia #onlineManualModal [class*="bg-amber-950"] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.theme-sepia #onlineManualModal [class*="bg-slate-950"],
+body.theme-sepia #onlineManualModal [class*="bg-slate-900"],
+body.theme-sepia #onlineManualModal [class*="bg-slate-800"],
+body.theme-sepia #onlineManualModal [class*="bg-amber-950"],
+body.theme-sepia #onlineManualModal [class*="bg-gradient-to-"] {
+  background-color: #fff8ee !important;
+  border-color: #e8dcc8 !important;
+}
+
+body.theme-paper #onlineManualModal h3,
+body.theme-paper #onlineManualModal h4,
+body.theme-paper #onlineManualModal h5,
+body.theme-paper #onlineManualModal .text-white,
+body.theme-paper #onlineManualModal strong,
+body.theme-paper #onlineManualModal p,
+body.theme-paper #onlineManualModal li,
+body.theme-paper #onlineManualModal span,
+body.theme-paper #onlineManualModal [class*="text-slate-100"],
+body.theme-paper #onlineManualModal [class*="text-slate-200"],
+body.theme-paper #onlineManualModal [class*="text-slate-300"],
+body.theme-sepia #onlineManualModal h3,
+body.theme-sepia #onlineManualModal h4,
+body.theme-sepia #onlineManualModal h5,
+body.theme-sepia #onlineManualModal .text-white,
+body.theme-sepia #onlineManualModal strong,
+body.theme-sepia #onlineManualModal p,
+body.theme-sepia #onlineManualModal li,
+body.theme-sepia #onlineManualModal span,
+body.theme-sepia #onlineManualModal [class*="text-slate-100"],
+body.theme-sepia #onlineManualModal [class*="text-slate-200"],
+body.theme-sepia #onlineManualModal [class*="text-slate-300"] {
+  color: #0f172a !important;
+}
+
+/* 補助文も AAA 寄りに濃く（slate-700） */
+body.theme-paper #onlineManualModal [class*="text-slate-400"],
+body.theme-paper #onlineManualModal [class*="text-slate-500"] {
+  color: #334155 !important;
+}
+
+body.theme-sepia #onlineManualModal [class*="text-slate-400"],
+body.theme-sepia #onlineManualModal [class*="text-slate-500"] {
+  color: #5c4d3c !important;
+}
+
+body.theme-paper #onlineManualModal [class*="text-cyan-"],
+body.theme-paper #onlineManualModal [class*="text-blue-"],
+body.theme-paper #onlineManualModal [class*="text-indigo-"],
+body.theme-paper #onlineManualModal [class*="text-emerald-"],
+body.theme-paper #onlineManualModal [class*="text-amber-"],
+body.theme-paper #onlineManualModal [class*="text-purple-"] {
+  color: #0f766e !important;
+}
+
+body.theme-sepia #onlineManualModal [class*="text-cyan-"],
+body.theme-sepia #onlineManualModal [class*="text-blue-"],
+body.theme-sepia #onlineManualModal [class*="text-indigo-"],
+body.theme-sepia #onlineManualModal [class*="text-emerald-"],
+body.theme-sepia #onlineManualModal [class*="text-amber-"],
+body.theme-sepia #onlineManualModal [class*="text-purple-"] {
+  color: #92400e !important;
+}
+
+body.theme-paper #onlineManualModal .manual-tab-btn {
+  color: #475569 !important;
+}
+body.theme-paper #onlineManualModal .manual-tab-btn.border-cyan-500,
+body.theme-paper #onlineManualModal #manualTabBtn-basic {
+  color: #0e7490 !important;
+  border-bottom-color: #0891b2 !important;
+}
+
+body.theme-paper #onlineManualModal button.bg-slate-800,
+body.theme-sepia #onlineManualModal button.bg-slate-800 {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+body.theme-paper #onlineManualModal ul.text-slate-300 li span,
+body.theme-sepia #onlineManualModal ul.text-slate-300 li span {
+  color: #1e293b !important;
+  line-height: 1.55;
+}
+
+body.theme-paper #onlineManualModal ul.text-slate-300 li strong,
+body.theme-sepia #onlineManualModal ul.text-slate-300 li strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* フッターブランド表記も読める濃さに */
+body.theme-paper #onlineManualModal > div > div:last-child span,
+body.theme-sepia #onlineManualModal > div > div:last-child span {
+  color: #334155 !important;
+}
+
+/* ==========================================================================
+   朗読テキスト組版 (親コンテナからの確実な強制適用)
+   ========================================================================== */
+
+/* 1. 文字サイズ (親クラスから子要素 .segment-text / p を確実に上書き) */
+.reader-text-xs .segment-text, .reader-text-xs p { font-size: 0.85rem !important; }
+.reader-text-sm .segment-text, .reader-text-sm p { font-size: 0.95rem !important; }
+.reader-text-md .segment-text, .reader-text-md p { font-size: 1.075rem !important; }
+.reader-text-lg .segment-text, .reader-text-lg p { font-size: 1.25rem !important; }
+.reader-text-xl .segment-text, .reader-text-xl p { font-size: 1.45rem !important; }
+.reader-text-2xl .segment-text, .reader-text-2xl p { font-size: 1.65rem !important; }
+
+/* 2. 行間 (Leading) */
+.reader-lh-tight .segment-text, .reader-lh-tight p { line-height: 1.65 !important; }
+.reader-lh-normal .segment-text, .reader-lh-normal p { line-height: 1.95 !important; }
+.reader-lh-loose .segment-text, .reader-lh-loose p { line-height: 2.35 !important; }
+
+/* 3. 文字間 (Tracking) */
+.reader-ls-tight .segment-text, .reader-ls-tight p { letter-spacing: 0.01em !important; }
+.reader-ls-normal .segment-text, .reader-ls-normal p { letter-spacing: 0.04em !important; }
+.reader-ls-wide .segment-text, .reader-ls-wide p { letter-spacing: 0.08em !important; }
+
+/* 4. カーモードの朗読文にも設定書体を波及 */
+.font-shippori #carModeCurrentText { font-family: 'Shippori Mincho', serif; }
+.font-noto-serif #carModeCurrentText { font-family: 'Noto Serif JP', serif; }
+.font-noto-sans #carModeCurrentText { font-family: 'Noto Sans JP', sans-serif; }
+.font-kaisei #carModeCurrentText { font-family: 'Kaisei Decol', serif; }
+
+/* ==========================================================================
+   4大テーマ モーダル & バナー & ボタン高コントラスト保証 (WCAG AAA)
+   ========================================================================== */
+
+/* 1. ボイスピッカーモーダル (#voicePickerModal) */
+body.theme-paper #voicePickerModal > div,
+body.theme-sepia #voicePickerModal > div {
+  background-color: var(--modal-bg) !important;
+  border-color: var(--border-dark) !important;
+}
+body.theme-paper #voicePickerModal h3,
+body.theme-sepia #voicePickerModal h3,
+body.theme-paper #voicePickerModal .text-white,
+body.theme-sepia #voicePickerModal .text-white {
+  color: var(--text-main) !important;
+}
+body.theme-paper #voicePickerModal input,
+body.theme-sepia #voicePickerModal input {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--input-text) !important;
+}
+body.theme-paper #voicePickerModal input::placeholder,
+body.theme-sepia #voicePickerModal input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* 2. 設定画面プレミアムバナー & クイックボタン (#settingsModal) */
+body.theme-paper #settingsPremiumBanner,
+body.theme-sepia #settingsPremiumBanner {
+  background-image: none !important;
+  background-color: #fef3c7 !important; /* amber-100 */
+  border-color: #f59e0b !important;
+}
+body.theme-paper #settingsPremiumBanner p,
+body.theme-sepia #settingsPremiumBanner p {
+  color: #92400e !important; /* amber-800 */
+}
+body.theme-paper #settingsPremiumStatusDesc,
+body.theme-sepia #settingsPremiumStatusDesc {
+  color: #b45309 !important; /* amber-700 */
+}
+
+/* ==============================================
+   🎧 リワード広告＆バックグラウンド再生解放モーダル (#rewardedBackgroundModal)
+   WCAG AAA コントラスト完全適応 (Paper & Sepia 視認性保証)
+   ============================================== */
+
+/* --- Paper Theme --- */
+body.theme-paper #rewardedBackgroundModal > div {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+}
+
+body.theme-paper #rewardedBackgroundModal .w-12.h-12 {
+  background-color: #fef3c7 !important;
+  border-color: #fcd34d !important;
+}
+
+body.theme-paper #rewardedBackgroundModal .w-12.h-12 i {
+  color: #b45309 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalFreeBadge,
+body.theme-paper #rewardedBackgroundModal .bg-free-badge {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fcd34d !important;
+  font-weight: 700 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalTitle,
+body.theme-paper #rewardedBackgroundModal .bg-pass-title,
+body.theme-paper #rewardedBackgroundModal h3 {
+  color: #0f172a !important;
+}
+
+body.theme-paper #rewardedBackgroundModal .bg-pass-main-desc,
+body.theme-paper #rewardedBackgroundModal .text-slate-300 {
+  color: #334155 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal .bg-highlight-accent,
+body.theme-paper #rewardedBackgroundModal .text-amber-300 {
+  color: #b45309 !important;
+  font-weight: 700 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal .bg-features-box {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal .bg-features-box span,
+body.theme-paper #rewardedBackgroundModal .bg-features-box .text-slate-200 {
+  color: #1e293b !important;
+}
+
+body.theme-paper #rewardedBackgroundModal .bg-features-box i {
+  color: #059669 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalCurrentStatus {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalCurrentStatus span.text-slate-400 {
+  color: #475569 !important;
+  font-weight: 500 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalStatusVal,
+body.theme-paper #rewardedBackgroundModal #bgPassModalStatusVal.text-amber-400 {
+  color: #b45309 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalStatusVal.text-emerald-400 {
+  color: #047857 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalStatusVal.text-blue-400 {
+  color: #1d4ed8 !important;
+}
+
+/* 買い切り永久解放カード */
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%) !important;
+  border-color: #93c5fd !important;
+  box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.12) !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard .bg-lifetime-title,
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard .text-blue-300 {
+  color: #1e3a8a !important;
+  font-weight: 700 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard i.ph-crown {
+  color: #d97706 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard #bgPassModalPriceBadge {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #6ee7b7 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard .bg-lifetime-desc {
+  color: #334155 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard #btnRestorePremiumBgPlayback {
+  color: #475569 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #bgPassModalLifetimeCard #btnRestorePremiumBgPlayback:hover {
+  color: #1d4ed8 !important;
+}
+
+/* 動画広告を見て15分間解放 ボタン */
+body.theme-paper #rewardedBackgroundModal #btnWatchRewardAdModal {
+  background: linear-gradient(to right, #fffbeb, #fef3c7) !important;
+  border-color: #f59e0b !important;
+  color: #92400e !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.12) !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #btnWatchRewardAdModal:hover {
+  background: #fde68a !important;
+}
+
+body.theme-paper #rewardedBackgroundModal #btnWatchRewardAdModal i {
+  color: #b45309 !important;
+}
+
+/* 「今は画面をつけたまま聴く」ボタン */
+body.theme-paper #rewardedBackgroundModal button[onclick*="closeRewardedBackgroundModal"]:not(.absolute) {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+body.theme-paper #rewardedBackgroundModal button[onclick*="closeRewardedBackgroundModal"]:not(.absolute):hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* --- Sepia Theme --- */
+body.theme-sepia #rewardedBackgroundModal > div {
+  background-color: #faf5ec !important;
+  border-color: #e2d4c0 !important;
+  color: #2e2319 !important;
+  box-shadow: 0 25px 50px -12px rgba(46, 35, 25, 0.25) !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal .w-12.h-12 {
+  background-color: #fef3c7 !important;
+  border-color: #fcd34d !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal .w-12.h-12 i {
+  color: #92400e !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalFreeBadge,
+body.theme-sepia #rewardedBackgroundModal .bg-free-badge {
+  background-color: #fef3c7 !important;
+  color: #78350f !important;
+  border-color: #f59e0b !important;
+  font-weight: 700 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalTitle,
+body.theme-sepia #rewardedBackgroundModal .bg-pass-title,
+body.theme-sepia #rewardedBackgroundModal h3 {
+  color: #2e2319 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal .bg-pass-main-desc,
+body.theme-sepia #rewardedBackgroundModal .text-slate-300 {
+  color: #5c4d3c !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal .bg-highlight-accent,
+body.theme-sepia #rewardedBackgroundModal .text-amber-300 {
+  color: #92400e !important;
+  font-weight: 700 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal .bg-features-box {
+  background-color: #f5ede1 !important;
+  border-color: #e2d4c0 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal .bg-features-box span,
+body.theme-sepia #rewardedBackgroundModal .bg-features-box .text-slate-200 {
+  color: #2e2319 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal .bg-features-box i {
+  color: #047857 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalCurrentStatus {
+  background-color: #ede1d0 !important;
+  border-color: #d6c4ad !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalCurrentStatus span.text-slate-400 {
+  color: #6e5a48 !important;
+  font-weight: 500 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalStatusVal,
+body.theme-sepia #rewardedBackgroundModal #bgPassModalStatusVal.text-amber-400 {
+  color: #92400e !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalStatusVal.text-emerald-400 {
+  color: #047857 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalStatusVal.text-blue-400 {
+  color: #1e40af !important;
+}
+
+/* 買い切り永久解放カード */
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 60%, #fed7aa 100%) !important;
+  border-color: #fcd34d !important;
+  box-shadow: 0 4px 12px -2px rgba(180, 83, 9, 0.12) !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard .bg-lifetime-title,
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard .text-blue-300 {
+  color: #78350f !important;
+  font-weight: 700 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard i.ph-crown {
+  color: #b45309 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard #bgPassModalPriceBadge {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #6ee7b7 !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard .bg-lifetime-desc {
+  color: #5c4d3c !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard #btnRestorePremiumBgPlayback {
+  color: #78350f !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #bgPassModalLifetimeCard #btnRestorePremiumBgPlayback:hover {
+  color: #451a03 !important;
+}
+
+/* 動画広告を見て15分間解放 ボタン */
+body.theme-sepia #rewardedBackgroundModal #btnWatchRewardAdModal {
+  background: linear-gradient(to right, #fef3c7, #fde68a) !important;
+  border-color: #f59e0b !important;
+  color: #78350f !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 4px rgba(180, 83, 9, 0.12) !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #btnWatchRewardAdModal:hover {
+  background: #fcd34d !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal #btnWatchRewardAdModal i {
+  color: #92400e !important;
+}
+
+/* 「今は画面をつけたまま聴く」ボタン */
+body.theme-sepia #rewardedBackgroundModal button[onclick*="closeRewardedBackgroundModal"]:not(.absolute) {
+  background-color: #ede1d0 !important;
+  color: #6e5a48 !important;
+  border: 1px solid #d6c4ad !important;
+}
+
+body.theme-sepia #rewardedBackgroundModal button[onclick*="closeRewardedBackgroundModal"]:not(.absolute):hover {
+  background-color: #e2d4c0 !important;
+  color: #2e2319 !important;
+}
+
+/* ヘッダー・プレイヤー・ホーム画面のBGバッジ (Paper / Sepia) */
+body.theme-paper #bgPlaybackBadge button,
+body.theme-sepia #bgPlaybackBadge button {
+  background: #fef3c7 !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+}
+
+body.theme-paper #bgPlaybackHomeStatusText.text-amber-400,
+body.theme-sepia #bgPlaybackHomeStatusText.text-amber-400 {
+  color: #b45309 !important;
+}
+
+/* ==============================================
+   📄 文書流し込み (PDF・TXT) セクション (#documentImportSection)
+   WCAG AAA コントラスト完全適応 (Paper & Sepia 視認性保証)
+   ============================================== */
+
+/* --- Paper Theme --- */
+body.theme-paper #docImportLicenseCard,
+body.theme-paper .doc-import-license-card {
+  background-color: #eff6ff !important; /* blue-50 */
+  border-color: #bfdbfe !important; /* blue-200 */
+}
+
+body.theme-paper #docImportLicenseCard .doc-license-title,
+body.theme-paper #docImportLicenseCard .text-blue-300 {
+  color: #1e40af !important; /* blue-800: コントラスト比 8.5:1 超 */
+  font-weight: 700 !important;
+}
+
+body.theme-paper #docImportLicenseCard .doc-license-icon {
+  color: #2563eb !important; /* blue-600 */
+}
+
+body.theme-paper #docImportLicenseCard .doc-license-desc,
+body.theme-paper #docImportLicenseCard p {
+  color: #1e293b !important; /* slate-800: コントラスト比 11:1 超 */
+}
+
+body.theme-paper #documentDropZone {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.theme-paper #documentDropZone:hover {
+  border-color: #2563eb !important;
+  background-color: #f8fafc !important;
+}
+
+body.theme-paper #documentDropZone .w-12.h-12 {
+  background-color: #dbeafe !important;
+  color: #1d4ed8 !important;
+}
+
+body.theme-paper #documentDropZone h4 {
+  color: #0f172a !important;
+}
+
+body.theme-paper #documentDropZone p.text-slate-400 {
+  color: #475569 !important;
+}
+
+body.theme-paper #documentDropZone p.text-slate-500 {
+  color: #64748b !important;
+}
+
+body.theme-paper #documentImportSection label {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+body.theme-paper #documentImportSection input,
+body.theme-paper #documentImportSection select,
+body.theme-paper #documentImportSection textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+body.theme-paper #documentImportSection input::placeholder,
+body.theme-paper #documentImportSection textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* --- Sepia Theme --- */
+body.theme-sepia #docImportLicenseCard,
+body.theme-sepia .doc-import-license-card {
+  background-color: #fef3c7 !important; /* amber-100 */
+  border-color: #fde68a !important; /* amber-200 */
+}
+
+body.theme-sepia #docImportLicenseCard .doc-license-title,
+body.theme-sepia #docImportLicenseCard .text-blue-300 {
+  color: #78350f !important; /* amber-900 */
+  font-weight: 700 !important;
+}
+
+body.theme-sepia #docImportLicenseCard .doc-license-icon {
+  color: #b45309 !important; /* amber-700 */
+}
+
+body.theme-sepia #docImportLicenseCard .doc-license-desc,
+body.theme-sepia #docImportLicenseCard p {
+  color: #451a03 !important; /* 濃いセピアブラウン: コントラスト比 10:1 超 */
+}
+
+body.theme-sepia #documentDropZone {
+  background-color: #faf5ec !important;
+  border-color: #d6c4ad !important;
+}
+
+body.theme-sepia #documentDropZone:hover {
+  border-color: #b45309 !important;
+  background-color: #f5ede1 !important;
+}
+
+body.theme-sepia #documentDropZone .w-12.h-12 {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+body.theme-sepia #documentDropZone h4 {
+  color: #2e2319 !important;
+}
+
+body.theme-sepia #documentDropZone p.text-slate-400 {
+  color: #5c4d3c !important;
+}
+
+body.theme-sepia #documentDropZone p.text-slate-500 {
+  color: #786452 !important;
+}
+
+body.theme-sepia #documentImportSection label {
+  color: #451a03 !important;
+  font-weight: 600 !important;
+}
+
+body.theme-sepia #documentImportSection input,
+body.theme-sepia #documentImportSection select,
+body.theme-sepia #documentImportSection textarea {
+  background-color: #faf5ec !important;
+  border-color: #d6c4ad !important;
+  color: #2e2319 !important;
+}
+
+body.theme-sepia #documentImportSection input::placeholder,
+body.theme-sepia #documentImportSection textarea::placeholder {
+  color: #a89480 !important;
+}
+
+/* サイト選択上部バッジの視認性向上 */
+body.theme-paper #siteBadgeNotice.text-blue-400 {
+  color: #1d4ed8 !important;
+  font-weight: 600 !important;
+}
+
+body.theme-paper #siteBadgeNotice.text-emerald-400 {
+  color: #047857 !important;
+  font-weight: 600 !important;
+}
+
+body.theme-sepia #siteBadgeNotice.text-blue-400 {
+  color: #92400e !important;
+  font-weight: 600 !important;
+}
+
+body.theme-sepia #siteBadgeNotice.text-emerald-400 {
+  color: #047857 !important;
+  font-weight: 600 !important;
+}
+
+/* 3. 朗読画面上部ペインのアクションボタン (通報, 配役変更, キャッシュ生成) */
+body.theme-paper button[onclick*="openUgcReportModal"],
+body.theme-sepia button[onclick*="openUgcReportModal"] {
+  background-color: #ffe4e6 !important; /* rose-100 */
+  border-color: #fda4af !important;
+  color: #be123c !important; /* rose-700 */
+}
+body.theme-paper button[onclick*="switchTab('cast')"],
+body.theme-sepia button[onclick*="switchTab('cast')"] {
+  background-color: #e0e7ff !important; /* indigo-100 */
+  border-color: #a5b4fc !important;
+  color: #3730a3 !important; /* indigo-700 */
+}
+body.theme-paper #playerUncachedAudioBatchBtn,
+body.theme-sepia #playerUncachedAudioBatchBtn {
+  background-color: #ecfdf5 !important; /* emerald-100 */
+  border-color: #6ee7b7 !important;
+  color: #047857 !important; /* emerald-700 */
+}
+body.theme-paper #playerUncachedAudioBatchBtn i,
+body.theme-sepia #playerUncachedAudioBatchBtn i {
+  color: #059669 !important;
+}
+
+/* 4. ミニプレイヤー (Caret ボタンとテキストの視認性) */
+body.theme-paper #miniPlayerBar button i,
+body.theme-sepia #miniPlayerBar button i {
+  color: var(--text-main) !important;
+}
+body.theme-paper #miniSpeakerBadge {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border-color: #93c5fd !important;
+}
+body.theme-sepia #miniSpeakerBadge {
+  background-color: #fed7aa !important;
+  color: #9a3412 !important;
+  border-color: #fdba74 !important;
+}
+body.theme-paper #miniPlayerNovelInfo {
+  color: #1d4ed8 !important;
+}
+body.theme-sepia #miniPlayerNovelInfo {
+  color: #b45309 !important;
+}
+
+/* 5. 下部ナビゲーション項目のテーマ色対応 */
+.bottom-nav-item {
+  color: var(--text-muted, #94a3b8);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+body.theme-paper .bottom-nav-item {
+  color: #64748b;
+}
+body.theme-sepia .bottom-nav-item {
+  color: #786452;
+}
+.bottom-nav-item.active {
+  color: var(--bottom-nav-active, #3b82f6) !important;
+  font-weight: 700;
+}
+.bottom-nav-item.active .nav-icon-wrapper {
+  background-color: var(--highlight-bg, rgba(59, 130, 246, 0.18));
+  border-radius: 9999px;
+  padding: 3px 14px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* モーダル表示時の背景スクロール完全防止 */
+body.modal-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+
+/* ==========================================================================
+   アニメーション & リップル & フォームコントロール
+   ========================================================================== */
+
+/* ボタン・インタラクティブ要素の統一的アクティブ押し込み効果 */
+button, 
+.interactive-btn,
+.site-tab-btn,
+.aozora-author-btn,
+[role="button"] {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+button:active, 
+.interactive-btn:active,
+[role="button"]:active {
+  transform: scale(0.96);
+  opacity: 0.92;
+}
+
+/* Materialライクな軽量波紋（リップル）エフェクト */
+.ripple-surface {
+  position: relative;
+  overflow: hidden;
+}
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(0);
+  animation: rippleAnimation 0.45s ease-out;
+  pointer-events: none;
+}
+@keyframes rippleAnimation {
+  to {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* 控えめで高級感のあるシマー効果（邪魔にならない微光アニメーション） */
+.shimmer-bar {
+  background-image: linear-gradient(
+    90deg,
+    rgba(16, 185, 129, 0.4) 0%,
+    rgba(52, 211, 153, 0.8) 50%,
+    rgba(16, 185, 129, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMove 2s infinite linear;
+}
+@keyframes shimmerMove {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ミニイコライザー波形アニメーション */
+.equalizer-bar {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 12px;
+}
+.equalizer-bar span {
+  width: 2px;
+  background-color: #34d399;
+  border-radius: 1px;
+  animation: eqBounce 1s infinite ease-in-out;
+}
+.equalizer-bar span:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+.equalizer-bar span:nth-child(2) { height: 90%; animation-delay: 0.3s; }
+.equalizer-bar span:nth-child(3) { height: 60%; animation-delay: 0.2s; }
+@keyframes eqBounce {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+/* スケルトンカードアニメーション */
+.skeleton-card {
+  background: linear-gradient(90deg, rgba(30,41,59,0.5) 25%, rgba(51,65,85,0.5) 50%, rgba(30,41,59,0.5) 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+}
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 統一レンジスライダー (.app-range-slider) */
+.app-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--card-secondary, #1e293b);
+  border-radius: 9999px;
+  outline: none;
+  transition: background 0.2s ease;
+}
+.app-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary, #3b82f6);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.app-range-slider::-webkit-slider-thumb:active {
+  transform: scale(1.18);
+}
+body.theme-paper .app-range-slider { background: #e2e8f0; }
+body.theme-sepia .app-range-slider { background: #e2d4c0; }
+
+/* 統一セレクトボックス (.app-select) */
+.app-select {
+  width: 100%;
+  background-color: var(--input-bg, #0b0f17);
+  border: 1px solid var(--input-border, rgba(255, 255, 255, 0.15));
+  color: var(--input-text, #f1f5f9) !important;
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.app-select:focus {
+  border-color: var(--primary, #3b82f6);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+/* モバイル最適化トグルスイッチ (.app-toggle) */
+.app-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+.app-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: #334155;
+  border-radius: 9999px;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  shrink: 0;
+}
+.app-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+input[type="checkbox"]:checked + .app-toggle {
+  background-color: var(--primary, #2563eb);
+}
+input[type="checkbox"]:checked + .app-toggle::after {
+  transform: translateX(20px);
+}
+body.theme-paper .app-toggle { background-color: #cbd5e1; }
+body.theme-sepia .app-toggle { background-color: #d6c4ad; }
+
+/* 全文プレビューモーダル (#documentFullPreviewModal) のテーマ対応 */
+body.theme-paper #documentFullPreviewModal .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+body.theme-paper #documentFullPreviewModal .bg-slate-950,
+body.theme-paper #documentFullPreviewModal .bg-slate-950\/70 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+body.theme-paper #documentFullPreviewModal .bg-slate-950\/60 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+body.theme-paper #documentFullPreviewModal h3,
+body.theme-paper #documentFullPreviewModal h4 {
+  color: #0f172a !important;
+}
+body.theme-paper #documentFullPreviewModal .text-slate-200 {
+  color: #1e293b !important;
+}
+body.theme-paper #documentFullPreviewModal .text-slate-400 {
+  color: #64748b !important;
+}
+
+body.theme-sepia #documentFullPreviewModal .bg-slate-900 {
+  background-color: #fbf0d9 !important;
+  border-color: #d6c4ad !important;
+}
+body.theme-sepia #documentFullPreviewModal .bg-slate-950,
+body.theme-sepia #documentFullPreviewModal .bg-slate-950\/70 {
+  background-color: #f4e5c8 !important;
+  border-color: #e2d1b7 !important;
+}
+body.theme-sepia #documentFullPreviewModal .bg-slate-950\/60 {
+  background-color: #faebd0 !important;
+  border-color: #d8c5ad !important;
+}
+body.theme-sepia #documentFullPreviewModal h3,
+body.theme-sepia #documentFullPreviewModal h4 {
+  color: #3b2816 !important;
+}
+body.theme-sepia #documentFullPreviewModal .text-slate-200 {
+  color: #4a3520 !important;
+}
+body.theme-sepia #documentFullPreviewModal .text-slate-400 {
+  color: #7d6349 !important;
+}
+
+/* ========================================================
+   便利機能クイックツールバー & 検索ハイライト & しおりバッジ
+   ======================================================== */
+.quick-tool-pill {
+  user-select: none;
+  white-space: nowrap;
+}
+.quick-tool-pill.active-pill {
+  background-color: rgba(59, 130, 246, 0.22) !important;
+  border-color: rgba(96, 165, 250, 0.65) !important;
+  color: #93c5fd !important;
+}
+.segment-search-match {
+  outline: 2px solid #f59e0b !important;
+  background-color: rgba(245, 158, 11, 0.14) !important;
+}
+.segment-search-match-current {
+  outline: 2.5px solid #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.22) !important;
+}
+.segment-bookmarked-card {
+  border-right: 3px solid #f59e0b !important;
+}
+
+/* ライトテーマ (Paper / Sepia) WCAG AAA コントラスト対応 */
+body.theme-paper .quick-tool-pill {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+body.theme-paper .quick-tool-pill.active-pill {
+  background-color: #dbeafe !important;
+  border-color: #2563eb !important;
+  color: #1e3a8a !important;
+}
+body.theme-sepia .quick-tool-pill {
+  background-color: #f4e5c8 !important;
+  border-color: #d6c4ad !important;
+  color: #3b2816 !important;
+}
+body.theme-sepia .quick-tool-pill.active-pill {
+  background-color: #fde68a !important;
+  border-color: #b45309 !important;
+  color: #78350f !important;
+}
+
+/* 新規モーダル群のライトテーマ対応 (#apiKeyTutorialModal, #sleepTimerModal, #bookmarksModal, #pronunciationDictModal, #ambientBgmModal, #aiTranslationModal) */
+body.theme-paper #apiKeyTutorialModal .bg-slate-900,
+body.theme-paper #sleepTimerModal .bg-slate-900,
+body.theme-paper #bookmarksModal .bg-slate-900,
+body.theme-paper #pronunciationDictModal .bg-slate-900,
+body.theme-paper #ambientBgmModal .bg-slate-900,
+body.theme-paper #aiTranslationModal .bg-slate-900,
+body.theme-paper #aiTranslationModal .bg-slate-900\/90 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+body.theme-paper #apiKeyTutorialModal .bg-slate-950,
+body.theme-paper #apiKeyTutorialModal .bg-slate-950\/80,
+body.theme-paper #apiKeyTutorialModal .bg-slate-950\/70,
+body.theme-paper #apiKeyTutorialModal .bg-slate-950\/60,
+body.theme-paper #sleepTimerModal .bg-slate-950,
+body.theme-paper #bookmarksModal .bg-slate-950,
+body.theme-paper #pronunciationDictModal .bg-slate-950,
+body.theme-paper #ambientBgmModal .bg-slate-950,
+body.theme-paper #aiTranslationModal .bg-slate-950,
+body.theme-paper #aiTranslationModal .bg-slate-950\/95,
+body.theme-paper #aiTranslationModal .bg-slate-950\/90 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+body.theme-paper #apiKeyTutorialModal .text-slate-100,
+body.theme-paper #apiKeyTutorialModal .text-slate-200,
+body.theme-paper #apiKeyTutorialModal .text-slate-300,
+body.theme-paper #sleepTimerModal .text-slate-100,
+body.theme-paper #sleepTimerModal .text-slate-200,
+body.theme-paper #bookmarksModal .text-slate-100,
+body.theme-paper #bookmarksModal .text-slate-200,
+body.theme-paper #pronunciationDictModal .text-slate-100,
+body.theme-paper #pronunciationDictModal .text-slate-200,
+body.theme-paper #ambientBgmModal .text-slate-100,
+body.theme-paper #ambientBgmModal .text-slate-200,
+body.theme-paper #aiTranslationModal .text-slate-100,
+body.theme-paper #aiTranslationModal .text-slate-200,
+body.theme-paper #aiTranslationModal .text-slate-300 {
+  color: #0f172a !important;
+}
+body.theme-paper #apiKeyTutorialModal .text-slate-400,
+body.theme-paper #sleepTimerModal .text-slate-400,
+body.theme-paper #bookmarksModal .text-slate-400,
+body.theme-paper #pronunciationDictModal .text-slate-400,
+body.theme-paper #ambientBgmModal .text-slate-400,
+body.theme-paper #aiTranslationModal .text-slate-400 {
+  color: #475569 !important;
+}
+body.theme-paper #apiKeyTutorialModal .bg-slate-800,
+body.theme-paper #sleepTimerModal .bg-slate-800,
+body.theme-paper #bookmarksModal .bg-slate-800,
+body.theme-paper #pronunciationDictModal .bg-slate-800,
+body.theme-paper #ambientBgmModal .bg-slate-800,
+body.theme-paper #aiTranslationModal .bg-slate-800 {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+body.theme-sepia #apiKeyTutorialModal .bg-slate-900,
+body.theme-sepia #sleepTimerModal .bg-slate-900,
+body.theme-sepia #bookmarksModal .bg-slate-900,
+body.theme-sepia #pronunciationDictModal .bg-slate-900,
+body.theme-sepia #ambientBgmModal .bg-slate-900,
+body.theme-sepia #aiTranslationModal .bg-slate-900,
+body.theme-sepia #aiTranslationModal .bg-slate-900\/90 {
+  background-color: #fbf0d9 !important;
+  border-color: #d6c4ad !important;
+  color: #3b2816 !important;
+}
+body.theme-sepia #apiKeyTutorialModal .bg-slate-950,
+body.theme-sepia #apiKeyTutorialModal .bg-slate-950\/80,
+body.theme-sepia #apiKeyTutorialModal .bg-slate-950\/70,
+body.theme-sepia #apiKeyTutorialModal .bg-slate-950\/60,
+body.theme-sepia #sleepTimerModal .bg-slate-950,
+body.theme-sepia #bookmarksModal .bg-slate-950,
+body.theme-sepia #pronunciationDictModal .bg-slate-950,
+body.theme-sepia #ambientBgmModal .bg-slate-950,
+body.theme-sepia #aiTranslationModal .bg-slate-950,
+body.theme-sepia #aiTranslationModal .bg-slate-950\/95,
+body.theme-sepia #aiTranslationModal .bg-slate-950\/90 {
+  background-color: #f4e5c8 !important;
+  border-color: #d6c4ad !important;
+}
+body.theme-sepia #apiKeyTutorialModal .text-slate-100,
+body.theme-sepia #apiKeyTutorialModal .text-slate-200,
+body.theme-sepia #apiKeyTutorialModal .text-slate-300,
+body.theme-sepia #sleepTimerModal .text-slate-100,
+body.theme-sepia #sleepTimerModal .text-slate-200,
+body.theme-sepia #bookmarksModal .text-slate-100,
+body.theme-sepia #bookmarksModal .text-slate-200,
+body.theme-sepia #pronunciationDictModal .text-slate-100,
+body.theme-sepia #pronunciationDictModal .text-slate-200,
+body.theme-sepia #ambientBgmModal .text-slate-100,
+body.theme-sepia #ambientBgmModal .text-slate-200,
+body.theme-sepia #aiTranslationModal .text-slate-100,
+body.theme-sepia #aiTranslationModal .text-slate-200,
+body.theme-sepia #aiTranslationModal .text-slate-300 {
+  color: #3b2816 !important;
+}
+body.theme-sepia #apiKeyTutorialModal .text-slate-400,
+body.theme-sepia #sleepTimerModal .text-slate-400,
+body.theme-sepia #bookmarksModal .text-slate-400,
+body.theme-sepia #pronunciationDictModal .text-slate-400,
+body.theme-sepia #ambientBgmModal .text-slate-400,
+body.theme-sepia #aiTranslationModal .text-slate-400 {
+  color: #5c4d3c !important;
+}
+body.theme-sepia #apiKeyTutorialModal .bg-slate-800,
+body.theme-sepia #sleepTimerModal .bg-slate-800,
+body.theme-sepia #bookmarksModal .bg-slate-800,
+body.theme-sepia #pronunciationDictModal .bg-slate-800,
+body.theme-sepia #ambientBgmModal .bg-slate-800,
+body.theme-sepia #aiTranslationModal .bg-slate-800 {
+  background-color: #eaddc2 !important;
+  border-color: #cbb69b !important;
+  color: #3b2816 !important;
+}
+
+/* =========================================================
+   🌐 AI多言語翻訳モーダル & 便利モーダル群 4大テーマ完全高コントラスト (WCAG AAA)
+   ========================================================= */
+.segment-bilingual-sub {
+  margin-top: 0.35rem;
+  padding-top: 0.3rem;
+  border-top: 1px dashed rgba(148, 163, 184, 0.28);
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+body.theme-paper .segment-bilingual-sub {
+  color: #475569 !important;
+  border-top-color: #cbd5e1 !important;
+}
+body.theme-sepia .segment-bilingual-sub {
+  color: #5c4d3c !important;
+  border-top-color: #d6c4ad !important;
+}
+
+/* 1. 選択中ボタン (.ui-lang-choice-btn.is-selected / .trans-target-btn.is-selected / .ambient-mode-btn.is-selected) */
+/* Dark & OLED (デフォルト) */
+.ui-lang-choice-btn.is-selected,
+.trans-target-btn.is-selected {
+  background: linear-gradient(135deg, #312e81 0%, #3730a3 100%) !important;
+  border: 2px solid #818cf8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.25) !important;
+}
+.ui-lang-choice-btn.is-selected span,
+.ui-lang-choice-btn.is-selected i,
+.trans-target-btn.is-selected .trans-btn-title {
+  color: #ffffff !important;
+}
+.trans-target-btn.is-selected .trans-btn-sub {
+  color: #e0e7ff !important;
+}
+.ambient-mode-btn.is-selected {
+  background-color: rgba(8, 51, 68, 0.85) !important;
+  border: 2px solid #22d3ee !important;
+  color: #ecfeff !important;
+}
+
+/* Paper Theme (白背景での選択ボタン高コントラスト) */
+body.theme-paper .ui-lang-choice-btn.is-selected,
+body.theme-paper .trans-target-btn.is-selected {
+  background: #e0e7ff !important;
+  border: 2px solid #4338ca !important;
+  color: #1e1b4b !important;
+  box-shadow: 0 2px 8px rgba(67, 56, 202, 0.14) !important;
+}
+body.theme-paper .ui-lang-choice-btn.is-selected span,
+body.theme-paper .ui-lang-choice-btn.is-selected i,
+body.theme-paper .trans-target-btn.is-selected .trans-btn-title {
+  color: #1e1b4b !important;
+}
+body.theme-paper .trans-target-btn.is-selected .trans-btn-sub {
+  color: #3730a3 !important;
+  font-weight: 600 !important;
+}
+body.theme-paper .ambient-mode-btn.is-selected {
+  background-color: #cffafe !important;
+  border: 2px solid #0891b2 !important;
+  color: #164e63 !important;
+}
+body.theme-paper .ambient-mode-btn.is-selected span,
+body.theme-paper .ambient-mode-btn.is-selected i {
+  color: #164e63 !important;
+}
+
+/* Sepia Theme (セピア背景での選択ボタン高コントラスト) */
+body.theme-sepia .ui-lang-choice-btn.is-selected,
+body.theme-sepia .trans-target-btn.is-selected {
+  background: #fde68a !important;
+  border: 2px solid #b45309 !important;
+  color: #451a03 !important;
+  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.14) !important;
+}
+body.theme-sepia .ui-lang-choice-btn.is-selected span,
+body.theme-sepia .ui-lang-choice-btn.is-selected i,
+body.theme-sepia .trans-target-btn.is-selected .trans-btn-title {
+  color: #451a03 !important;
+}
+body.theme-sepia .trans-target-btn.is-selected .trans-btn-sub {
+  color: #78350f !important;
+  font-weight: 600 !important;
+}
+body.theme-sepia .ambient-mode-btn.is-selected {
+  background-color: #fde68a !important;
+  border: 2px solid #b45309 !important;
+  color: #451a03 !important;
+}
+body.theme-sepia .ambient-mode-btn.is-selected span,
+body.theme-sepia .ambient-mode-btn.is-selected i {
+  color: #451a03 !important;
+}
+
+/* 2. ライトテーマでのバッジ・見出し・ステータス文字・ボタンのパステル白飛び防止 */
+body.theme-paper #aiTranslationModal .trans-modal-header-icon {
+  background-color: #e0e7ff !important;
+  border-color: #818cf8 !important;
+  color: #3730a3 !important;
+}
+body.theme-sepia #aiTranslationModal .trans-modal-header-icon {
+  background-color: #fef3c7 !important;
+  border-color: #f59e0b !important;
+  color: #92400e !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-badge-amber,
+body.theme-sepia #aiTranslationModal .trans-badge-amber {
+  background-color: #fef3c7 !important;
+  border-color: #f59e0b !important;
+  color: #92400e !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-badge-emerald,
+body.theme-sepia #aiTranslationModal .trans-badge-emerald {
+  background-color: #d1fae5 !important;
+  border-color: #10b981 !important;
+  color: #065f46 !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-badge-rose,
+body.theme-sepia #aiTranslationModal .trans-badge-rose {
+  background-color: #ffe4e6 !important;
+  border-color: #f43f5e !important;
+  color: #be123c !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-badge-indigo,
+body.theme-sepia #aiTranslationModal .trans-badge-indigo {
+  background-color: #e0e7ff !important;
+  border-color: #6366f1 !important;
+  color: #312e81 !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-heading-amber,
+body.theme-sepia #aiTranslationModal .trans-heading-amber {
+  color: #92400e !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-heading-indigo {
+  color: #3730a3 !important;
+}
+body.theme-sepia #aiTranslationModal .trans-heading-indigo {
+  color: #92400e !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-status-rose,
+body.theme-sepia #aiTranslationModal .trans-status-rose {
+  color: #be123c !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-status-emerald,
+body.theme-sepia #aiTranslationModal .trans-status-emerald {
+  color: #047857 !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-action-btn-amber,
+body.theme-sepia #aiTranslationModal .trans-action-btn-amber {
+  background-color: #d97706 !important;
+  border: 1px solid #b45309 !important;
+  color: #ffffff !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-action-btn-indigo,
+body.theme-sepia #aiTranslationModal .trans-action-btn-indigo {
+  background-color: #4f46e5 !important;
+  border: 1px solid #4338ca !important;
+  color: #ffffff !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-primary-exec-btn,
+body.theme-paper #aiTranslationModal .trans-primary-exec-btn span,
+body.theme-paper #aiTranslationModal .trans-primary-exec-btn i,
+body.theme-sepia #aiTranslationModal .trans-primary-exec-btn,
+body.theme-sepia #aiTranslationModal .trans-primary-exec-btn span,
+body.theme-sepia #aiTranslationModal .trans-primary-exec-btn i {
+  color: #ffffff !important;
+}
+
+body.theme-paper #aiTranslationModal .trans-locked-exec-btn {
+  background-color: #fff1f2 !important;
+  border: 1.5px solid #f43f5e !important;
+  color: #9f1239 !important;
+}
+body.theme-paper #aiTranslationModal .trans-locked-exec-btn span,
+body.theme-paper #aiTranslationModal .trans-locked-exec-btn i {
+  color: #9f1239 !important;
+}
+body.theme-sepia #aiTranslationModal .trans-locked-exec-btn {
+  background-color: #ffe4e6 !important;
+  border: 1.5px solid #e11d48 !important;
+  color: #881337 !important;
+}
+body.theme-sepia #aiTranslationModal .trans-locked-exec-btn span,
+body.theme-sepia #aiTranslationModal .trans-locked-exec-btn i {
+  color: #881337 !important;
+}
+
+/* 3. 他モーダル (#apiKeyTutorialModal, #sleepTimerModal, #bookmarksModal, #pronunciationDictModal, #ambientBgmModal) のパステル文字高コントラスト補正 */
+body.theme-paper #apiKeyTutorialModal .text-amber-300,
+body.theme-paper #bookmarksModal .text-amber-300,
+body.theme-sepia #apiKeyTutorialModal .text-amber-300,
+body.theme-sepia #bookmarksModal .text-amber-300 {
+  color: #92400e !important;
+}
+body.theme-paper #apiKeyTutorialModal .text-blue-300,
+body.theme-sepia #apiKeyTutorialModal .text-blue-300 {
+  color: #1e40af !important;
+}
+body.theme-paper #apiKeyTutorialModal .text-emerald-300,
+body.theme-paper #pronunciationDictModal .text-emerald-300,
+body.theme-sepia #apiKeyTutorialModal .text-emerald-300,
+body.theme-sepia #pronunciationDictModal .text-emerald-300 {
+  color: #065f46 !important;
+}
+body.theme-paper #apiKeyTutorialModal .text-violet-300,
+body.theme-sepia #apiKeyTutorialModal .text-violet-300 {
+  color: #5b21b6 !important;
+}
+body.theme-paper #sleepTimerModal .text-indigo-200,
+body.theme-paper #sleepTimerModal .text-indigo-300,
+body.theme-sepia #sleepTimerModal .text-indigo-200,
+body.theme-sepia #sleepTimerModal .text-indigo-300 {
+  color: #3730a3 !important;
+}
+body.theme-paper #ambientBgmModal .text-cyan-300,
+body.theme-paper #pronunciationDictModal .text-cyan-300,
+body.theme-sepia #ambientBgmModal .text-cyan-300,
+body.theme-sepia #pronunciationDictModal .text-cyan-300 {
+  color: #155e75 !important;
+}
+body.theme-paper #apiKeyTutorialModal [class*="bg-blue-950"] {
+  background-color: #eff6ff !important;
+  border-color: #93c5fd !important;
+}
+body.theme-paper #apiKeyTutorialModal [class*="bg-emerald-950"] {
+  background-color: #ecfdf5 !important;
+  border-color: #6ee7b7 !important;
+}
+body.theme-paper #apiKeyTutorialModal [class*="bg-violet-950"] {
+  background-color: #f5f3ff !important;
+  border-color: #c4b5fd !important;
+}
+body.theme-paper #apiKeyTutorialModal [class*="bg-amber-950"] {
+  background-color: #fffbeb !important;
+  border-color: #f59e0b !important;
+}
+body.theme-sepia #apiKeyTutorialModal [class*="bg-blue-950"],
+body.theme-sepia #apiKeyTutorialModal [class*="bg-emerald-950"],
+body.theme-sepia #apiKeyTutorialModal [class*="bg-violet-950"],
+body.theme-sepia #apiKeyTutorialModal [class*="bg-amber-950"] {
+  background-color: #f4e5c8 !important;
+  border-color: #cbb69b !important;
+}
+
+/* 4. ヘッダー言語ボタン & クイックツールバーAI翻訳ボタン */
+body.theme-paper #headerLangSwitchBtn,
+body.theme-paper #aiTranslateQuickBtn {
+  background: #e0e7ff !important;
+  border-color: #6366f1 !important;
+  color: #312e81 !important;
+}
+body.theme-paper #aiTranslateQuickBtn i,
+body.theme-paper #aiTranslateQuickBtn span {
+  color: #312e81 !important;
+}
+body.theme-sepia #headerLangSwitchBtn,
+body.theme-sepia #aiTranslateQuickBtn {
+  background: #fde68a !important;
+  border-color: #d97706 !important;
+  color: #78350f !important;
+}
+body.theme-sepia #aiTranslateQuickBtn i,
+body.theme-sepia #aiTranslateQuickBtn span {
+  color: #78350f !important;
+}
+
+/* 5. AI翻訳・言語設定モーダル タブ切り替えボタン (.trans-modal-tab-btn) */
+.trans-modal-tab-btn {
+  border-bottom: 2px solid transparent;
+  color: #94a3b8;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.trans-modal-tab-btn.is-active {
+  border-bottom: 2px solid #818cf8 !important;
+  color: #c7d2fe !important;
+  background: rgba(49, 46, 129, 0.4) !important;
+  font-weight: 700 !important;
+}
+body.theme-paper .trans-modal-tab-btn {
+  color: #64748b;
+}
+body.theme-paper .trans-modal-tab-btn.is-active {
+  border-bottom: 2px solid #4338ca !important;
+  color: #312e81 !important;
+  background: #e0e7ff !important;
+}
+body.theme-sepia .trans-modal-tab-btn {
+  color: #78716c;
+}
+body.theme-sepia .trans-modal-tab-btn.is-active {
+  border-bottom: 2px solid #b45309 !important;
+  color: #451a03 !important;
+  background: #fde68a !important;
+}
+
+/* ==========================================================================
+   利用規約・著作権ポリシー同意モーダル (#policyConsentModal) テーマ適応
+   ========================================================================== */
+body.theme-paper #policyConsentModal .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+body.theme-paper #policyConsentModal .bg-slate-950 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+body.theme-paper #policyConsentModal h3,
+body.theme-paper #policyConsentModal .text-white {
+  color: #0f172a !important;
+}
+body.theme-paper #policyConsentModal p,
+body.theme-paper #policyConsentModal .text-slate-400 {
+  color: #475569 !important;
+}
+body.theme-paper #policyConsentModal .text-slate-100,
+body.theme-paper #policyConsentModal .text-slate-200,
+body.theme-paper #policyConsentModal .text-slate-300 {
+  color: #1e293b !important;
+}
+body.theme-paper #policyConsentModal #policyConsentTopAction {
+  background: linear-gradient(to bottom, #eff6ff, #f8fafc) !important;
+  border-bottom: 1.5px solid #bfdbfe !important;
+}
+body.theme-paper #policyConsentModal #policyConsentTopAction label {
+  background-color: #ffffff !important;
+  border-color: #93c5fd !important;
+}
+body.theme-paper #policyConsentModal #policyConsentTopAction span {
+  color: #1e293b !important;
+}
+body.theme-paper #policyConsentModal [data-i18n="consent_intro"] {
+  background-color: #eff6ff !important;
+  border-color: #93c5fd !important;
+  color: #1e40af !important;
+}
+
+body.theme-sepia #policyConsentModal .bg-slate-900 {
+  background-color: #fbf0d9 !important;
+  border-color: #d6c4ad !important;
+  color: #3b2816 !important;
+}
+body.theme-sepia #policyConsentModal .bg-slate-950 {
+  background-color: #f4e5c8 !important;
+  border-color: #d6c4ad !important;
+}
+body.theme-sepia #policyConsentModal h3,
+body.theme-sepia #policyConsentModal .text-white {
+  color: #451a03 !important;
+}
+body.theme-sepia #policyConsentModal p,
+body.theme-sepia #policyConsentModal .text-slate-400 {
+  color: #78350f !important;
+}
+body.theme-sepia #policyConsentModal .text-slate-100,
+body.theme-sepia #policyConsentModal .text-slate-200,
+body.theme-sepia #policyConsentModal .text-slate-300 {
+  color: #3b2816 !important;
+}
+body.theme-sepia #policyConsentModal #policyConsentTopAction {
+  background: linear-gradient(to bottom, #fef3c7, #fdf6e2) !important;
+  border-bottom: 1.5px solid #fde68a !important;
+}
+body.theme-sepia #policyConsentModal #policyConsentTopAction label {
+  background-color: #fffbeb !important;
+  border-color: #f59e0b !important;
+}
+body.theme-sepia #policyConsentModal #policyConsentTopAction span {
+  color: #451a03 !important;
+}
+body.theme-sepia #policyConsentModal [data-i18n="consent_intro"] {
+  background-color: #fef3c7 !important;
+  border-color: #f59e0b !important;
+  color: #92400e !important;
+}
+
+/* =========================================================
+ * 切り替え状態の可視化 (Switch State Visibility)
+ * ========================================================= */
+:root {
+  --switch-on-label: "ON";
+  --switch-off-label: "OFF";
+}
+
+/* --- ON/OFF 文字入りトグルスイッチ (input.ui-switch) --- */
+input.ui-switch {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 54px;
+  height: 28px;
+  margin: 0;
+  border-radius: 999px;
+  background: #334155;
+  border: 1px solid #64748b;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+input.ui-switch::before {
+  content: var(--switch-off-label);
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  transform: translateY(-50%);
+  font: 800 9px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0.04em;
+  color: #e2e8f0;
+  pointer-events: none;
+}
+input.ui-switch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background: #f8fafc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+input.ui-switch:checked {
+  background: #047857;
+  border-color: #34d399;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+}
+input.ui-switch:checked::before {
+  content: var(--switch-on-label);
+  left: 8px;
+  right: auto;
+  color: #ffffff;
+}
+input.ui-switch:checked::after {
+  transform: translateX(26px);
+}
+input.ui-switch:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+input.ui-switch:active::after {
+  width: 24px;
+}
+/* ON の行全体を淡くハイライトし、ひと目で有効項目が分かるようにする */
+label:has(> input.ui-switch:checked) {
+  border-color: rgba(16, 185, 129, 0.55) !important;
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+body.theme-paper input.ui-switch,
+body.theme-sepia input.ui-switch {
+  background: #cbd5e1;
+  border-color: #64748b;
+}
+body.theme-sepia input.ui-switch {
+  background: #e7d8c3;
+  border-color: #8b6f4e;
+}
+body.theme-paper input.ui-switch::before,
+body.theme-sepia input.ui-switch::before {
+  color: #1e293b;
+}
+body.theme-paper input.ui-switch:checked,
+body.theme-sepia input.ui-switch:checked {
+  background: #047857;
+  border-color: #065f46;
+}
+body.theme-paper input.ui-switch:checked::before,
+body.theme-sepia input.ui-switch:checked::before {
+  color: #ffffff;
+}
+body.theme-paper input.ui-switch::after,
+body.theme-sepia input.ui-switch::after {
+  background: #ffffff;
+}
+
+/* --- 現在の設定サマリー --- */
+.state-summary {
+  padding: 10px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 27, 75, 0.55));
+  border: 1px solid rgba(129, 140, 248, 0.35);
+}
+.state-summary-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #c7d2fe;
+}
+.state-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+button.state-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+  padding: 7px 8px;
+  border-radius: 10px;
+  background: rgba(2, 6, 23, 0.75);
+  border: 1px solid #334155;
+  text-align: left;
+  transition: border-color 0.2s ease, transform 0.12s ease, background-color 0.2s ease;
+}
+.state-chip:active {
+  transform: scale(0.97);
+}
+.state-chip-label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+.state-chip-value {
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 800;
+  color: #f8fafc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.state-chip-sub {
+  max-width: 100%;
+  font-size: 9px;
+  font-weight: 600;
+  color: #6ee7b7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.state-chip.is-active-state {
+  border-color: #818cf8;
+  background: rgba(49, 46, 129, 0.55);
+}
+body.theme-paper .state-summary {
+  background: #eef2ff;
+  border-color: #a5b4fc;
+}
+body.theme-paper .state-summary-title { color: #3730a3; }
+body.theme-paper .state-chip { background: #ffffff; border-color: #cbd5e1; }
+body.theme-paper .state-chip-label { color: #475569; }
+body.theme-paper .state-chip-value { color: #0f172a; }
+body.theme-paper .state-chip-sub { color: #065f46; }
+body.theme-paper .state-chip.is-active-state { background: #e0e7ff; border-color: #4338ca; }
+body.theme-sepia .state-summary {
+  background: #fdf3e1;
+  border-color: #d6b98c;
+}
+body.theme-sepia .state-summary-title { color: #78350f; }
+body.theme-sepia .state-chip { background: #fffdfa; border-color: #d6c4ad; }
+body.theme-sepia .state-chip-label { color: #5c4d3c; }
+body.theme-sepia .state-chip-value { color: #2e2319; }
+body.theme-sepia .state-chip-sub { color: #065f46; }
+body.theme-sepia .state-chip.is-active-state { background: #fde68a; border-color: #b45309; }
+
+/* --- 現在値ライン (表示言語 / 音声エンジン 直下) --- */
+.switch-status-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.switch-status-line:empty { display: none; }
+.switch-status-line .ssl-mode {
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #e2e8f0;
+  background: rgba(51, 65, 85, 0.8);
+}
+body.theme-paper .switch-status-line,
+body.theme-sepia .switch-status-line {
+  color: #065f46;
+  background: #ecfdf5;
+  border-color: #6ee7b7;
+}
+body.theme-paper .switch-status-line .ssl-mode,
+body.theme-sepia .switch-status-line .ssl-mode {
+  color: #1e293b;
+  background: #e2e8f0;
+}
+
+/* --- 音声エンジン カード型ラジオ --- */
+.tts-engine-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+button.tts-engine-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  text-align: left;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.12s ease;
+}
+.tts-engine-card:active { transform: scale(0.985); }
+.tts-engine-card-icon { font-size: 20px; flex-shrink: 0; }
+.tts-engine-card-body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.tts-engine-card-title { font-size: 12px; font-weight: 800; color: #e2e8f0; }
+.tts-engine-card-rec {
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: 4px;
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 800;
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+.tts-engine-card-sub { font-size: 10px; color: #94a3b8; }
+.tts-engine-card-check {
+  flex-shrink: 0;
+  font-size: 20px;
+  color: #475569;
+  opacity: 0.35;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+.tts-engine-card.is-selected {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.75), rgba(15, 23, 42, 0.95));
+  border-color: #34d399;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+.tts-engine-card.is-selected .tts-engine-card-title { color: #ffffff; }
+.tts-engine-card.is-selected .tts-engine-card-sub { color: #a7f3d0; }
+.tts-engine-card.is-selected .tts-engine-card-check {
+  color: #34d399;
+  opacity: 1;
+  transform: scale(1.08);
+}
+body.theme-paper .tts-engine-card { background: #ffffff; border-color: #cbd5e1; }
+body.theme-paper .tts-engine-card-title { color: #0f172a; }
+body.theme-paper .tts-engine-card-sub { color: #475569; }
+body.theme-paper .tts-engine-card-rec { color: #92400e; background: #fef3c7; border-color: #f59e0b; }
+body.theme-paper .tts-engine-card.is-selected { background: #ecfdf5; border-color: #047857; }
+body.theme-paper .tts-engine-card.is-selected .tts-engine-card-title { color: #064e3b; }
+body.theme-paper .tts-engine-card.is-selected .tts-engine-card-sub { color: #065f46; }
+body.theme-paper .tts-engine-card.is-selected .tts-engine-card-check { color: #047857; }
+body.theme-sepia .tts-engine-card { background: #fffdfa; border-color: #d6c4ad; }
+body.theme-sepia .tts-engine-card-title { color: #2e2319; }
+body.theme-sepia .tts-engine-card-sub { color: #5c4d3c; }
+body.theme-sepia .tts-engine-card-rec { color: #92400e; background: #fef3c7; border-color: #d97706; }
+body.theme-sepia .tts-engine-card.is-selected { background: #ecfdf5; border-color: #047857; }
+body.theme-sepia .tts-engine-card.is-selected .tts-engine-card-title { color: #064e3b; }
+body.theme-sepia .tts-engine-card.is-selected .tts-engine-card-sub { color: #065f46; }
+body.theme-sepia .tts-engine-card.is-selected .tts-engine-card-check { color: #047857; }
+
+/* --- 「表示中」「✓ 使用中」バッジ ---
+ * .is-selected = 次に実行する選択 / .is-current = 実際に本文へ適用中 を区別する */
+.trans-target-btn,
+.ui-lang-choice-btn,
+.tts-engine-card { position: relative; }
+.trans-target-btn.is-current::after,
+.ui-lang-choice-btn.is-selected::after,
+.tts-engine-card.is-selected::after {
+  content: attr(data-state-label);
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #ffffff;
+  background: #047857;
+  border: 1px solid #34d399;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.trans-target-btn.is-current {
+  border-color: #34d399 !important;
+}
+body.theme-paper .trans-target-btn.is-current::after,
+body.theme-paper .ui-lang-choice-btn.is-selected::after,
+body.theme-paper .tts-engine-card.is-selected::after,
+body.theme-sepia .trans-target-btn.is-current::after,
+body.theme-sepia .ui-lang-choice-btn.is-selected::after,
+body.theme-sepia .tts-engine-card.is-selected::after {
+  border-color: #065f46;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 切り替え直後のフラッシュ (変化した箇所を一瞬光らせる) --- */
+@keyframes stateFlashPulse {
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.75); }
+  60% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+.state-flash {
+  animation: stateFlashPulse 0.9s ease-out 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .state-flash { animation: none; }
+  input.ui-switch,
+  input.ui-switch::after { transition: none; }
+}
+
+/* =========================================================
+ * ① 小説のランダム紹介 5作品 & ② 気分で選ぶ小説検索 スタイル
+ * ========================================================= */
+
+/* --- 気分ピルボタン (button.mood-picker-btn) --- */
+button.mood-picker-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  color: #e2e8f0;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+button.mood-picker-btn:hover {
+  background: #1e293b;
+  border-color: #64748b;
+  color: #ffffff;
+}
+button.mood-picker-btn:active {
+  transform: scale(0.96);
+}
+.mood-picker-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.mood-picker-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button.mood-picker-btn.is-active {
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.35) 0%, rgba(79, 70, 229, 0.4) 100%) !important;
+  border: 2px solid #f43f5e !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.35) !important;
+}
+button.mood-picker-btn.is-active::after {
+  content: "✓";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f43f5e;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* 4大テーマ対応: 気分ボタン */
+body.theme-paper button.mood-picker-btn {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+body.theme-paper button.mood-picker-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+body.theme-paper button.mood-picker-btn.is-active {
+  background: #ffe4e6 !important;
+  border-color: #e11d48 !important;
+  color: #881337 !important;
+}
+
+body.theme-sepia button.mood-picker-btn {
+  background: #fffdfa;
+  border-color: #d6c4ad;
+  color: #2e2319;
+}
+body.theme-sepia button.mood-picker-btn:hover {
+  background: #f5ebe0;
+  border-color: #b89f82;
+}
+body.theme-sepia button.mood-picker-btn.is-active {
+  background: #ffedd5 !important;
+  border-color: #ea580c !important;
+  color: #7c2d12 !important;
+}
+
+/* --- ランダム紹介 5作品カード (.random-novel-card) --- */
+.random-novel-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(99, 102, 241, 0.3);
+  border-radius: 16px;
+  padding: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+.random-novel-card:hover {
+  border-color: rgba(129, 140, 248, 0.7);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.18);
+  transform: translateY(-2px);
+}
+.random-card-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 800;
+  color: #a5b4fc;
+  background: rgba(49, 46, 129, 0.6);
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(129, 140, 248, 0.4);
+}
+.random-card-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.random-card-author {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+.random-card-synopsis {
+  font-size: 10px;
+  color: #cbd5e1;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 8px;
+  flex: 1;
+}
+.random-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 9px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+}
+.random-card-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+}
+.random-card-play-btn {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  transition: all 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+.random-card-play-btn:active {
+  transform: scale(0.96);
+}
+.random-card-toc-btn {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #e2e8f0 !important;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 6px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.random-card-toc-btn:active {
+  transform: scale(0.96);
+}
+
+/* 4大テーマ対応: ランダム紹介カード */
+body.theme-paper .random-novel-card {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+body.theme-paper .random-card-title { color: #0f172a; }
+body.theme-paper .random-card-author { color: #475569; }
+body.theme-paper .random-card-synopsis { color: #334155; }
+body.theme-paper .random-card-meta { border-color: #e2e8f0; color: #64748b; }
+body.theme-paper .random-card-toc-btn { background: #f1f5f9; border-color: #cbd5e1; color: #1e293b !important; }
+
+body.theme-sepia .random-novel-card {
+  background: #fffdfa;
+  border-color: #d6c4ad;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+body.theme-sepia .random-card-title { color: #2e2319; }
+body.theme-sepia .random-card-author { color: #5c4d3c; }
+body.theme-sepia .random-card-synopsis { color: #453424; }
+body.theme-sepia .random-card-meta { border-color: #ebe0d3; color: #786450; }
+body.theme-sepia .random-card-toc-btn { background: #f5ebe0; border-color: #d6c4ad; color: #2e2319 !important; }
+
+/* シャッフルアニメーション */
+@keyframes randomCardPop {
+  0% { opacity: 0; transform: scale(0.92) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.random-card-anim {
+  animation: randomCardPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* =========================================================
+ * 🎭 作者意図 ＆ 場面朗読演出ディレクター (AI Director) スタイル
+ * ========================================================= */
+#directorTuningBar {
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.4) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(49, 46, 129, 0.4) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  transition: all 0.2s ease;
+}
+#directorTuningBar:hover {
+  border-color: rgba(192, 132, 252, 0.7);
+  box-shadow: 0 4px 16px rgba(147, 51, 234, 0.2);
+}
+#directorTuningBar:active {
+  transform: scale(0.985);
+}
+
+/* 4大テーマ対応 */
+body.theme-paper #directorTuningBar {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #eff6ff 100%);
+  border-color: #c4b5fd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+body.theme-paper #directorAuthorIntentBadge { color: #5b21b6; }
+body.theme-paper #directorAudienceFeelingPreview { color: #475569; }
+
+body.theme-sepia #directorTuningBar {
+  background: linear-gradient(135deg, #faf5f0 0%, #fffdfa 50%, #f7eee3 100%);
+  border-color: #d8b4e2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+body.theme-sepia #directorAuthorIntentBadge { color: #581c87; }
+body.theme-sepia #directorAudienceFeelingPreview { color: #5c4d3c; }
+
+body.theme-oled #directorTuningBar {
+  background: #000000;
+  border-color: #7e22ce;
+}
+
+/* =========================================================
+ * 🍔 ハンバーガーメニュー (Offcanvas Navigation Drawer)
+ * ========================================================= */
+#hamburgerMenuContainer {
+  transition: opacity 0.25s ease;
+}
+
+#hamburgerDrawer {
+  background-color: var(--card-dark, #121926);
+  color: var(--text-main, #f1f5f9);
+  border-left: 1px solid var(--border-dark, rgba(255, 255, 255, 0.08));
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================================
+   ハンバーガーメニュー ドロワー 4大テーマ完全特化スタイル
+   (Paper / Sepia / Dark / OLED - WCAG AAA 準拠・高視認性)
+   ========================================================= */
+
+/* --- 1. デフォルト (Dark) --- */
+#hamburgerDrawer .drawer-status-badge {
+  background: #172554 !important;
+  color: #93c5fd !important;
+  border: 1px solid #3b82f6 !important;
+  font-weight: 700 !important;
+}
+#hamburgerDrawer .drawer-premium-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.55) !important;
+}
+#hamburgerDrawer .drawer-premium-icon-box {
+  background: rgba(245, 158, 11, 0.25) !important;
+  color: #fde047 !important;
+  border: 1px solid rgba(245, 158, 11, 0.5) !important;
+}
+#hamburgerDrawer .drawer-premium-title {
+  color: #fef08a !important;
+  font-weight: 800 !important;
+}
+#hamburgerDrawer .drawer-premium-desc {
+  color: #e2e8f0 !important;
+}
+#hamburgerDrawer .drawer-premium-arrow {
+  color: #facc15 !important;
+}
+
+/* 読書テーマ切替ピル (4テーマ共通で実物カラー見本) */
+#drawerThemeBtn-paper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #cbd5e1 !important;
+  font-weight: 700 !important;
+}
+#drawerThemeBtn-sepia {
+  background: #fbf0d9 !important;
+  color: #5b4636 !important;
+  border: 1.5px solid #d6c0a0 !important;
+  font-weight: 700 !important;
+}
+#drawerThemeBtn-dark {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1.5px solid #475569 !important;
+  font-weight: 700 !important;
+}
+#drawerThemeBtn-oled {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #334155 !important;
+  font-weight: 700 !important;
+}
+.drawer-theme-pill.active-theme {
+  outline: 2.5px solid #2563eb !important;
+  outline-offset: 1px !important;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5) !important;
+}
+
+/* スリープタイマーデフォルト (Dark) */
+#hamburgerDrawer .drawer-sleep-pill {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border: 1px solid #334155 !important;
+}
+#hamburgerDrawer .drawer-sleep-pill.active-timer {
+  background: #4f46e5 !important;
+  color: #ffffff !important;
+  border-color: #6366f1 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4) !important;
+}
+
+/* --- 2. Paper (紙白・高コントラスト白背景) --- */
+body.theme-paper #hamburgerDrawer {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-left-color: #e2e8f0;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+}
+body.theme-paper #drawerHeader {
+  background-color: #f8fafc !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+body.theme-paper #drawerAppTitle {
+  color: #0f172a !important;
+}
+body.theme-paper #drawerAppAuthor {
+  color: #64748b !important;
+}
+body.theme-paper .drawer-version-pill {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  border: 1px solid #6ee7b7 !important;
+  font-weight: 800 !important;
+}
+body.theme-paper #drawerCloseBtn {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+body.theme-paper #drawerCloseBtn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Paper: 動作設定カード */
+body.theme-paper #drawerStatusSummaryCard,
+body.theme-paper #drawerThemeCard,
+body.theme-paper #drawerSleepTimerCard {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+body.theme-paper .drawer-status-title {
+  color: #1e293b !important;
+}
+body.theme-paper .drawer-slider-icon {
+  color: #2563eb !important;
+}
+body.theme-paper .drawer-palette-icon {
+  color: #7c3aed !important;
+}
+body.theme-paper .drawer-moon-icon {
+  color: #4f46e5 !important;
+}
+body.theme-paper .drawer-status-label {
+  color: #64748b !important;
+}
+body.theme-paper .drawer-status-val {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+body.theme-paper .drawer-status-val-green {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+body.theme-paper .drawer-status-meta {
+  border-top-color: #e2e8f0 !important;
+}
+
+/* Paper: VOICEVOX Native バッジ (超高コントラスト・白地爽快ブルー) */
+body.theme-paper #hamburgerDrawer .drawer-status-badge {
+  background: #dbeafe !important;
+  color: #1e40af !important;
+  border: 1px solid #93c5fd !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 3px rgba(30, 64, 175, 0.12) !important;
+}
+
+/* Paper: 主要機能ボタン */
+body.theme-paper .drawer-section-heading {
+  color: #64748b !important;
+}
+body.theme-paper .drawer-action-btn {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+body.theme-paper .drawer-action-btn:hover {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+body.theme-paper .drawer-action-title {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+body.theme-paper .drawer-action-sub {
+  color: #64748b !important;
+}
+body.theme-paper .drawer-action-arrow {
+  color: #94a3b8 !important;
+}
+body.theme-paper .drawer-action-icon-blue {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+body.theme-paper .drawer-action-icon-cyan {
+  background: #ecfeff !important;
+  color: #0e7490 !important;
+  border-color: #a5f3fc !important;
+}
+body.theme-paper .drawer-action-icon-emerald {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+}
+
+/* Paper: スリープタイマー */
+body.theme-paper #hamburgerDrawer .drawer-sleep-pill {
+  background: #ffffff !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+  font-weight: 600 !important;
+}
+body.theme-paper #hamburgerDrawer .drawer-sleep-pill.active-timer {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #1d4ed8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Paper: プレミアム解放・広告非表示バナー (極上ゴールド・超高視認性) */
+body.theme-paper #hamburgerDrawer .drawer-premium-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 45%, #fde68a 100%) !important;
+  border: 1.5px solid #d97706 !important;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.16) !important;
+}
+body.theme-paper #hamburgerDrawer .drawer-premium-icon-box {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3) !important;
+}
+body.theme-paper #hamburgerDrawer .drawer-premium-title {
+  color: #78350f !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+}
+body.theme-paper #hamburgerDrawer .drawer-premium-desc {
+  color: #92400e !important;
+  font-weight: 600 !important;
+}
+body.theme-paper #hamburgerDrawer .drawer-premium-arrow {
+  color: #b45309 !important;
+}
+
+/* Paper: 法務・フッター */
+body.theme-paper #drawerLegalSection {
+  border-top-color: #e2e8f0 !important;
+}
+body.theme-paper .drawer-legal-btn {
+  background: #f8fafc !important;
+  color: #334155 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+body.theme-paper .drawer-legal-btn:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+body.theme-paper #drawerFooter {
+  background: #f8fafc !important;
+  border-top-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+/* --- 3. Sepia (茶紙・温かみセピア) --- */
+body.theme-sepia #hamburgerDrawer {
+  background-color: #fffdfa;
+  color: #2e2319;
+  border-left-color: #ebe0d3;
+  box-shadow: -4px 0 24px rgba(92, 77, 60, 0.2);
+}
+body.theme-sepia #drawerHeader {
+  background-color: #faf5ec !important;
+  border-bottom-color: #e8dccb !important;
+}
+body.theme-sepia #drawerAppTitle {
+  color: #2e2319 !important;
+}
+body.theme-sepia #drawerAppAuthor {
+  color: #786450 !important;
+}
+body.theme-sepia .drawer-version-pill {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  border: 1px solid #6ee7b7 !important;
+  font-weight: 800 !important;
+}
+body.theme-sepia #drawerCloseBtn {
+  background: #f5ebe0 !important;
+  color: #5c4d3c !important;
+  border: 1px solid #d6c4ad !important;
+}
+body.theme-sepia #drawerCloseBtn:hover {
+  background: #ebe0d3 !important;
+  color: #2e2319 !important;
+}
+
+/* Sepia: 動作設定カード */
+body.theme-sepia #drawerStatusSummaryCard,
+body.theme-sepia #drawerThemeCard,
+body.theme-sepia #drawerSleepTimerCard {
+  background-color: #faf5ec !important;
+  border: 1px solid #e8dccb !important;
+}
+body.theme-sepia .drawer-status-title {
+  color: #2e2319 !important;
+}
+body.theme-sepia .drawer-slider-icon {
+  color: #b45309 !important;
+}
+body.theme-sepia .drawer-palette-icon {
+  color: #8b5cf6 !important;
+}
+body.theme-sepia .drawer-moon-icon {
+  color: #7c3aed !important;
+}
+body.theme-sepia .drawer-status-label {
+  color: #786450 !important;
+}
+body.theme-sepia .drawer-status-val {
+  color: #2e2319 !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia .drawer-status-val-green {
+  color: #15803d !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia .drawer-status-meta {
+  border-top-color: #e8dccb !important;
+}
+
+/* Sepia: VOICEVOX Native バッジ */
+body.theme-sepia #hamburgerDrawer .drawer-status-badge {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 3px rgba(146, 64, 14, 0.12) !important;
+}
+
+/* Sepia: 主要機能ボタン */
+body.theme-sepia .drawer-section-heading {
+  color: #786450 !important;
+}
+body.theme-sepia .drawer-action-btn {
+  background: #fffdfa !important;
+  border: 1.5px solid #e8dccb !important;
+  box-shadow: 0 1px 3px rgba(92, 77, 60, 0.06) !important;
+}
+body.theme-sepia .drawer-action-btn:hover {
+  background: #faf5ec !important;
+  border-color: #d6c4ad !important;
+}
+body.theme-sepia .drawer-action-title {
+  color: #2e2319 !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia .drawer-action-sub {
+  color: #786450 !important;
+}
+body.theme-sepia .drawer-action-arrow {
+  color: #a8947f !important;
+}
+body.theme-sepia .drawer-action-icon-blue {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+body.theme-sepia .drawer-action-icon-cyan {
+  background: #ecfeff !important;
+  color: #0e7490 !important;
+  border-color: #a5f3fc !important;
+}
+body.theme-sepia .drawer-action-icon-emerald {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+}
+
+/* Sepia: 読書テーマ選択中の枠線 */
+body.theme-sepia .drawer-theme-pill.active-theme {
+  outline: 2.5px solid #d97706 !important;
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.45) !important;
+}
+
+/* Sepia: スリープタイマー */
+body.theme-sepia #hamburgerDrawer .drawer-sleep-pill {
+  background: #fffdfa !important;
+  color: #443425 !important;
+  border: 1px solid #d6c4ad !important;
+  font-weight: 600 !important;
+}
+body.theme-sepia #hamburgerDrawer .drawer-sleep-pill.active-timer {
+  background: #854d0e !important;
+  color: #ffffff !important;
+  border-color: #713f12 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 6px rgba(133, 77, 14, 0.3) !important;
+}
+
+/* Sepia: プレミアム解放バナー */
+body.theme-sepia #hamburgerDrawer .drawer-premium-card {
+  background: linear-gradient(135deg, #fdf6ec 0%, #faecd8 100%) !important;
+  border: 1.5px solid #b45309 !important;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.14) !important;
+}
+body.theme-sepia #hamburgerDrawer .drawer-premium-icon-box {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.25) !important;
+}
+body.theme-sepia #hamburgerDrawer .drawer-premium-title {
+  color: #451a03 !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+}
+body.theme-sepia #hamburgerDrawer .drawer-premium-desc {
+  color: #78350f !important;
+  font-weight: 600 !important;
+}
+body.theme-sepia #hamburgerDrawer .drawer-premium-arrow {
+  color: #92400e !important;
+}
+
+/* Sepia: 法務・フッター */
+body.theme-sepia #drawerLegalSection {
+  border-top-color: #e8dccb !important;
+}
+body.theme-sepia .drawer-legal-btn {
+  background: #faf5ec !important;
+  color: #443425 !important;
+  border: 1px solid #e8dccb !important;
+}
+body.theme-sepia .drawer-legal-btn:hover {
+  background: #f5ebe0 !important;
+  color: #2e2319 !important;
+}
+body.theme-sepia #drawerFooter {
+  background: #faf5ec !important;
+  border-top-color: #e8dccb !important;
+  color: #786450 !important;
+}
+
+/* --- 4. OLED (漆黒ブラック) --- */
+body.theme-oled #hamburgerDrawer {
+  background-color: #000000;
+  color: #ffffff;
+  border-left-color: #27272a;
+}
+body.theme-oled #drawerHeader,
+body.theme-oled #drawerStatusSummaryCard,
+body.theme-oled #drawerThemeCard,
+body.theme-oled #drawerSleepTimerCard,
+body.theme-oled #drawerFooter {
+  background-color: #09090b !important;
+  border-color: #27272a !important;
+}
+body.theme-oled .drawer-action-btn {
+  background-color: #121215 !important;
+  border-color: #27272a !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-status-badge {
+  background: #000000 !important;
+  color: #60a5fa !important;
+  border-color: #2563eb !important;
+  font-weight: 700 !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-sleep-pill {
+  background: #18181b !important;
+  color: #d4d4d8 !important;
+  border-color: #27272a !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-sleep-pill.active-timer {
+  background: #4f46e5 !important;
+  color: #ffffff !important;
+  border-color: #818cf8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.5) !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-premium-card {
+  background: linear-gradient(135deg, #241a05 0%, #000000 100%) !important;
+  border: 1.5px solid #d97706 !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-premium-icon-box {
+  background: #78350f !important;
+  color: #fef08a !important;
+  border: none !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-premium-title {
+  color: #fef08a !important;
+  font-weight: 800 !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-premium-desc {
+  color: #cbd5e1 !important;
+}
+body.theme-oled #hamburgerDrawer .drawer-premium-arrow {
+  color: #f59e0b !important;
+}
+body.theme-oled .drawer-legal-btn {
+  background: #121215 !important;
+  color: #d4d4d8 !important;
+  border: 1px solid #27272a !important;
+}/* =========================================================
+   朗読テキストモード差別化 (原文モード vs 現代語超訳 vs 多言語翻訳)
+   WCAG AAA 準拠・4大テーマ完全連動・視覚的背景色差別化
+   ========================================================= */
+
+/* --- 1. 現代語超訳モード (琥珀・ゴールド・ウォーム系) --- */
+#playerMiddlePane.reading-mode-modern-ja {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.09) 0%, rgba(20, 16, 10, 0.94) 100%) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+  box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.22), inset 0 1px 0 rgba(245, 158, 11, 0.25) !important;
+}
+
+body.theme-paper #playerMiddlePane.reading-mode-modern-ja {
+  background: linear-gradient(180deg, #fffbf0 0%, #fffdf5 100%) !important;
+  border: 1.5px solid #f59e0b !important;
+  box-shadow: 0 0 20px -2px rgba(245, 158, 11, 0.18) !important;
+}
+
+body.theme-sepia #playerMiddlePane.reading-mode-modern-ja {
+  background: linear-gradient(180deg, #fff6e8 0%, #fbf1de 100%) !important;
+  border: 1.5px solid #d97706 !important;
+  box-shadow: 0 0 20px -2px rgba(217, 119, 6, 0.22) !important;
+}
+
+body.theme-oled #playerMiddlePane.reading-mode-modern-ja {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.14) 0%, #000000 100%) !important;
+  border: 1.5px solid #d97706 !important;
+  box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* 現代語超訳時のセグメントカード */
+#playerMiddlePane.reading-mode-modern-ja .segment-card {
+  border-color: rgba(245, 158, 11, 0.22);
+}
+
+#playerMiddlePane.reading-mode-modern-ja .segment-card.active {
+  background-color: rgba(245, 158, 11, 0.16) !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.25) !important;
+}
+
+#playerMiddlePane.reading-mode-modern-ja .segment-card.active::before {
+  background: #f59e0b !important;
+  box-shadow: 0 0 10px #f59e0b !important;
+}
+
+#playerMiddlePane.reading-mode-modern-ja .segment-card .karaoke-progress-bar {
+  background: #f59e0b !important;
+}
+
+body.theme-paper #playerMiddlePane.reading-mode-modern-ja .segment-card {
+  background-color: #ffffff !important;
+  border-color: #fed7aa !important;
+}
+
+body.theme-paper #playerMiddlePane.reading-mode-modern-ja .segment-card.active {
+  background-color: #fef3c7 !important;
+  border-color: #d97706 !important;
+}
+
+body.theme-sepia #playerMiddlePane.reading-mode-modern-ja .segment-card {
+  background-color: #fffdf7 !important;
+  border-color: #fde68a !important;
+}
+
+body.theme-sepia #playerMiddlePane.reading-mode-modern-ja .segment-card.active {
+  background-color: #fef08a !important;
+  border-color: #b45309 !important;
+}
+
+/* 現代語超訳時のモードステータスバー */
+.mode-banner-modern-ja {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.08) 100%) !important;
+  border: 1px solid rgba(245, 158, 11, 0.45) !important;
+}
+.mode-banner-modern-ja #readingModeTitle {
+  color: #fbbf24 !important;
+}
+.mode-banner-modern-ja #readingModeDesc {
+  color: #fde68a !important;
+}
+body.theme-paper .mode-banner-modern-ja,
+body.theme-sepia .mode-banner-modern-ja {
+  background: linear-gradient(90deg, #fef3c7 0%, #fffbeb 100%) !important;
+  border: 1px solid #f59e0b !important;
+}
+body.theme-paper .mode-banner-modern-ja #readingModeTitle,
+body.theme-sepia .mode-banner-modern-ja #readingModeTitle {
+  color: #92400e !important;
+}
+body.theme-paper .mode-banner-modern-ja #readingModeDesc,
+body.theme-sepia .mode-banner-modern-ja #readingModeDesc {
+  color: #b45309 !important;
+}
+
+
+/* --- 2. 原文モード (エメラルド・クラシック系) --- */
+#playerMiddlePane.reading-mode-original {
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+}
+
+body.theme-paper #playerMiddlePane.reading-mode-original {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+body.theme-sepia #playerMiddlePane.reading-mode-original {
+  background: #faf5ec !important;
+  border: 1px solid #e2d4c0 !important;
+}
+
+body.theme-oled #playerMiddlePane.reading-mode-original {
+  background: #000000 !important;
+  border: 1px solid #27272a !important;
+}
+
+.mode-banner-original {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 23, 42, 0.5) 100%) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+.mode-banner-original #readingModeTitle {
+  color: #6ee7b7 !important;
+}
+.mode-banner-original #readingModeDesc {
+  color: #94a3b8 !important;
+}
+body.theme-paper .mode-banner-original {
+  background: linear-gradient(90deg, #ecfdf5 0%, #ffffff 100%) !important;
+  border: 1px solid #a7f3d0 !important;
+}
+body.theme-paper .mode-banner-original #readingModeTitle {
+  color: #065f46 !important;
+}
+body.theme-paper .mode-banner-original #readingModeDesc {
+  color: #047857 !important;
+}
+body.theme-sepia .mode-banner-original {
+  background: linear-gradient(90deg, #f0fdf4 0%, #faf5ec 100%) !important;
+  border: 1px solid #bbf7d0 !important;
+}
+body.theme-sepia .mode-banner-original #readingModeTitle {
+  color: #064e3b !important;
+}
+body.theme-sepia .mode-banner-original #readingModeDesc {
+  color: #065f46 !important;
+}
+
+
+/* --- 3. 多言語翻訳モード (スカイブルー・インディゴ系) --- */
+#playerMiddlePane.reading-mode-multilingual {
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%) !important;
+  border: 1.5px solid rgba(14, 165, 233, 0.45) !important;
+  box-shadow: 0 0 25px -4px rgba(14, 165, 233, 0.22), inset 0 1px 0 rgba(14, 165, 233, 0.25) !important;
+}
+
+body.theme-paper #playerMiddlePane.reading-mode-multilingual {
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%) !important;
+  border: 1.5px solid #0284c7 !important;
+}
+
+body.theme-sepia #playerMiddlePane.reading-mode-multilingual {
+  background: linear-gradient(180deg, #f0f7fa 0%, #faf5ec 100%) !important;
+  border: 1.5px solid #0369a1 !important;
+}
+
+body.theme-oled #playerMiddlePane.reading-mode-multilingual {
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.12) 0%, #000000 100%) !important;
+  border: 1.5px solid #0284c7 !important;
+}
+
+.mode-banner-multilingual {
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.16) 0%, rgba(99, 102, 241, 0.1) 100%) !important;
+  border: 1px solid rgba(14, 165, 233, 0.4) !important;
+}
+.mode-banner-multilingual #readingModeTitle {
+  color: #7dd3fc !important;
+}
+.mode-banner-multilingual #readingModeDesc {
+  color: #bae6fd !important;
+}
+body.theme-paper .mode-banner-multilingual {
+  background: linear-gradient(90deg, #e0f2fe 0%, #ffffff 100%) !important;
+  border: 1px solid #38bdf8 !important;
+}
+body.theme-paper .mode-banner-multilingual #readingModeTitle {
+  color: #0c4a6e !important;
+}
+body.theme-paper .mode-banner-multilingual #readingModeDesc {
+  color: #0369a1 !important;
+}
+body.theme-sepia .mode-banner-multilingual {
+  background: linear-gradient(90deg, #e0f2fe 0%, #faf5ec 100%) !important;
+  border: 1px solid #0284c7 !important;
+}
+body.theme-sepia .mode-banner-multilingual #readingModeTitle {
+  color: #0c4a6e !important;
+}
+body.theme-sepia .mode-banner-multilingual #readingModeDesc {
+  color: #075985 !important;
+}
+
+/* =========================================================
+   UI/UX最適化: スマホ縦画面におけるクイックツールバー＆バナーの省スペース化
+   ========================================================= */
+#playerQuickToolsBar {
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+.player-quick-btn {
+  padding: 5px 1px !important;
+  min-height: 48px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.player-quick-btn i {
+  font-size: 1.15rem !important;
+  margin-bottom: 1px !important;
+}
+
+.player-quick-btn span {
+  font-size: 9.5px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  white-space: nowrap !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+  display: block !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* 現代語超訳・原文バナーの省スペース化 */
+#playerReadingModeBanner {
+  padding: 4px 10px !important;
+  min-height: 38px !important;
+}
+
+#playerReadingModeBanner #readingModeTitle {
+  font-size: 11px !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.01em !important;
+}
+
+#playerReadingModeBanner #readingModeSwitchQuickBtn {
+  font-size: 10px !important;
+  padding: 3px 8px !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* =========================================================
+   🎬 Studio LampKeep オープニングロゴ動画 スプラッシュ (横画面・全画面・広告なし)
+   ========================================================= */
+#studioLogoSplashOverlay {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  width: 100dvw !important;
+  height: 100dvh !important;
+  background-color: #000000 !important;
+  touch-action: none;
+  overflow: hidden !important;
+  transition: opacity 0.45s ease-out, visibility 0.45s ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+#studioLogoVideoWrap {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #000000 !important;
+  overflow: hidden !important;
+}
+
+#studioLogoVideo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 88% !important;
+  background-color: #000000 !important;
+}
+
+/* 端末・ブラウザが縦画面(Portrait)のままの場合でも、90度回転して横画面全画面で再生 */
+@media (orientation: portrait) {
+  #studioLogoVideoWrap {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100vh !important;
+    height: 100vw !important;
+    width: 100dvh !important;
+    height: 100dvw !important;
+    transform: translate(-50%, -50%) rotate(90deg) !important;
+    transform-origin: center center !important;
+  }
+}
+
+#studioLogoSplashOverlay.splash-fade-out {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   📖 朗読タブ: スクロール連動型ミニマル再生バー (Compact Reader UI)
+   ユーザー要望: スクロール時は再生・ストップボタンのみ残して他を消し、
+                 一番上に戻ったらフル表示に復帰
+   ========================================================= */
+
+/* 1. アプリ最上部ヘッダーの自動退避 */
+body.player-compact-active #mainAppHeader {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+/* 2. 朗読タブ本体の余白調整 */
+#tab-player.is-player-compact {
+  padding-top: 0 !important;
+}
+
+/* 3. 上部ペインを最上部に固定し、1行の薄型バーに凝縮 (Safe Area Top 保護) */
+#tab-player.is-player-compact #playerTopPane {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 45 !important;
+  padding: max(6px, calc(env(safe-area-inset-top, 0px) + 4px)) 12px 6px 12px !important;
+  margin: 0 -4px 8px -4px !important;
+  border-radius: 0 0 16px 16px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  min-height: 52px !important;
+  border-top: none !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 4. スクロール時に消す要素: 再生・ストップ以外を完全に非表示化 */
+#tab-player.is-player-compact #playerMetaBadgesRow,
+#tab-player.is-player-compact #playerSubtitle,
+#tab-player.is-player-compact #directorTuningBar,
+#tab-player.is-player-compact #playerSeekBarSection,
+#tab-player.is-player-compact #btnPrevEpisode,
+#tab-player.is-player-compact #btnNextEpisode,
+#tab-player.is-player-compact #btnPrevSegment,
+#tab-player.is-player-compact #btnNextSegment,
+#tab-player.is-player-compact #playerQuickToolsBar,
+#tab-player.is-player-compact #playerMoreToolsDrawer,
+#tab-player.is-player-compact #playerInEpisodeSearchBar,
+#tab-player.is-player-compact #playerReadingModeBanner {
+  display: none !important;
+}
+
+/* 5. コンパクト時のタイトル行（左側に小さく配置） */
+#tab-player.is-player-compact #playerTopTitleRow {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 !important;
+}
+
+#tab-player.is-player-compact #playerNovelTitle {
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: calc(100vw - 175px) !important;
+}
+
+#tab-player.is-player-compact #playerCompactScrollTopHint {
+  display: inline-flex !important;
+}
+
+/* 6. コンパクト時の操作行（右側に再生/ストップボタン＋目次ボタンを整列） */
+#tab-player.is-player-compact #playerMainControlsRow {
+  border-top: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  shrink: 0 !important;
+}
+
+/* 7. 再生・ストップボタン（押しやすい42pxサークル） */
+#tab-player.is-player-compact #playPauseBtn {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4) !important;
+}
+
+#tab-player.is-player-compact #playPauseBtn i {
+  font-size: 18px !important;
+}
+
+/* 8. 本文エリアの拡大（上部UIが消えた分、広大な読書スペースを確保しつつ内部スクロールコンテナを維持） */
+#tab-player.is-player-compact #playerMiddlePane {
+  height: calc(100vh - 150px) !important;
+  height: calc(100dvh - 150px) !important;
+  max-height: calc(100vh - 150px) !important;
+  max-height: calc(100dvh - 150px) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y pinch-zoom !important;
+}
+
+#tab-player.is-player-compact #playerMiddlePane:has(.vertical-reader) {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  touch-action: pan-x pan-y pinch-zoom !important;
+}
+
+/* 9. テーマ別コントラスト（Paper, Sepia, Dark, OLED） */
+body.theme-paper #tab-player.is-player-compact #playerTopPane {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+}
+body.theme-sepia #tab-player.is-player-compact #playerTopPane {
+  background-color: rgba(246, 238, 226, 0.96) !important;
+  border-color: #d6c4b2 !important;
+  box-shadow: 0 4px 16px rgba(120, 100, 82, 0.12) !important;
+}
+body.theme-dark #tab-player.is-player-compact #playerTopPane {
+  background-color: rgba(15, 23, 42, 0.96) !important;
+  border-color: #334155 !important;
+}
+body.theme-oled #tab-player.is-player-compact #playerTopPane {
+  background-color: rgba(0, 0, 0, 0.98) !important;
+  border-color: #27272a !important;
+}
+
+/* =========================================================
+ * 🌟 全テーマ包括 WCAG AAA コントラスト＆視認性完全強化ブロック
+ * ========================================================= */
+
+/* ---------------------------------------------------------
+ * 1. 朗読画面（Playerタブ）コントラスト強化 (画像1 & 2 対応)
+ * --------------------------------------------------------- */
+/* 🎭 作者意図 ＆ 場面調子ディレクターバー */
+body.theme-paper #directorTuningBar {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #eff6ff 100%) !important;
+  border-color: #c4b5fd !important;
+}
+body.theme-paper #directorAuthorIntentBadge {
+  color: #4c1d95 !important;
+}
+body.theme-paper #directorAudienceFeelingPreview {
+  color: #334155 !important;
+}
+/* 場面調子: 通常 バッジ (画像2の拡大箇所) - 濃いアンバーブラウンでAAA達成 */
+body.theme-paper #directorCurrentSceneBadge {
+  background-color: #fef3c7 !important;
+  border: 1px solid #f59e0b !important;
+  color: #78350f !important;
+}
+body.theme-paper #directorCurrentSceneBadge *,
+body.theme-paper #directorSceneText {
+  color: #78350f !important;
+}
+
+body.theme-sepia #directorTuningBar {
+  background: linear-gradient(135deg, #faf5f0 0%, #fffdfa 50%, #f7eee3 100%) !important;
+  border-color: #d8b4fe !important;
+}
+body.theme-sepia #directorAuthorIntentBadge {
+  color: #581c87 !important;
+}
+body.theme-sepia #directorAudienceFeelingPreview {
+  color: #443527 !important;
+}
+body.theme-sepia #directorCurrentSceneBadge {
+  background-color: #faebd7 !important;
+  border: 1px solid #d97706 !important;
+  color: #78350f !important;
+}
+body.theme-sepia #directorCurrentSceneBadge *,
+body.theme-sepia #directorSceneText {
+  color: #78350f !important;
+}
+
+/* モード切替バナー内の「超訳にする / 原文に戻す」ボタン & サブバッジ */
+body.theme-paper #readingModeSwitchBtn,
+body.theme-paper #readingModeSwitchQuickBtn {
+  background-color: #fef3c7 !important;
+  border: 1px solid #d97706 !important;
+  color: #78350f !important;
+  font-weight: 700 !important;
+}
+body.theme-paper #readingModeSwitchBtn *,
+body.theme-paper #readingModeSwitchQuickBtn * {
+  color: #78350f !important;
+}
+body.theme-sepia #readingModeSwitchBtn,
+body.theme-sepia #readingModeSwitchQuickBtn {
+  background-color: #faebd7 !important;
+  border: 1px solid #d97706 !important;
+  color: #78350f !important;
+  font-weight: 700 !important;
+}
+body.theme-sepia #readingModeSwitchBtn *,
+body.theme-sepia #readingModeSwitchQuickBtn * {
+  color: #78350f !important;
+}
+body.theme-paper .mode-banner-original #readingModeIconBadge,
+body.theme-paper .mode-banner-original #readingModeSubBadge,
+body.theme-sepia .mode-banner-original #readingModeIconBadge,
+body.theme-sepia .mode-banner-original #readingModeSubBadge {
+  background-color: #d1fae5 !important;
+  border-color: #059669 !important;
+  color: #064e3b !important;
+}
+body.theme-paper .mode-banner-modern-ja #readingModeIconBadge,
+body.theme-paper .mode-banner-modern-ja #readingModeSubBadge,
+body.theme-sepia .mode-banner-modern-ja #readingModeIconBadge,
+body.theme-sepia .mode-banner-modern-ja #readingModeSubBadge {
+  background-color: #fef3c7 !important;
+  border-color: #d97706 !important;
+  color: #78350f !important;
+}
+body.theme-paper .mode-banner-multilingual #readingModeIconBadge,
+body.theme-paper .mode-banner-multilingual #readingModeSubBadge,
+body.theme-sepia .mode-banner-multilingual #readingModeIconBadge,
+body.theme-sepia .mode-banner-multilingual #readingModeSubBadge {
+  background-color: #e0f2fe !important;
+  border-color: #0284c7 !important;
+  color: #0c4a6e !important;
+}
+
+/* メタバッジ群（エピソード, AI解析済, BG） */
+body.theme-paper #playerEpisodeBadge {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+body.theme-paper #playerAiStatusBadge {
+  background-color: #e0e7ff !important;
+  color: #312e81 !important;
+  border: 1px solid #818cf8 !important;
+}
+body.theme-paper #playerAiStatusBadge * {
+  color: #312e81 !important;
+}
+body.theme-paper #bgPlaybackBadge span,
+body.theme-paper #bgPlaybackBadge button {
+  background-color: #fef3c7 !important;
+  color: #78350f !important;
+  border: 1px solid #f59e0b !important;
+}
+body.theme-paper #bgPlaybackBadge * {
+  color: #78350f !important;
+}
+
+body.theme-sepia #playerEpisodeBadge {
+  background-color: #f7eee3 !important;
+  color: #2e2319 !important;
+  border: 1px solid #d8c7b5 !important;
+}
+body.theme-sepia #playerAiStatusBadge {
+  background-color: #f3e8ff !important;
+  color: #4a044e !important;
+  border: 1px solid #c084fc !important;
+}
+body.theme-sepia #playerAiStatusBadge * {
+  color: #4a044e !important;
+}
+body.theme-sepia #bgPlaybackBadge span,
+body.theme-sepia #bgPlaybackBadge button {
+  background-color: #faebd7 !important;
+  color: #78350f !important;
+  border: 1px solid #d97706 !important;
+}
+body.theme-sepia #bgPlaybackBadge * {
+  color: #78350f !important;
+}
+
+/* 再生位置スライダー周り */
+body.theme-paper #playerSeekPositionText { color: #1d4ed8 !important; }
+body.theme-paper #playerSeekPercentText {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+body.theme-paper #currentPlayingSpeaker {
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+  border: 1px solid #93c5fd !important;
+}
+body.theme-paper #voicevoxCreditBadge {
+  background-color: #ecfdf5 !important;
+  color: #064e3b !important;
+  border: 1px solid #6ee7b7 !important;
+}
+body.theme-paper #voicevoxCreditBadge * {
+  color: #064e3b !important;
+}
+
+body.theme-sepia #playerSeekPositionText { color: #92400e !important; }
+body.theme-sepia #playerSeekPercentText {
+  background-color: #f7eee3 !important;
+  color: #2e2319 !important;
+  border: 1px solid #d8c7b5 !important;
+}
+body.theme-sepia #currentPlayingSpeaker {
+  background-color: #fffbeb !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+}
+body.theme-sepia #voicevoxCreditBadge {
+  background-color: #f0fdf4 !important;
+  color: #14532d !important;
+  border: 1px solid #bbf7d0 !important;
+}
+body.theme-sepia #voicevoxCreditBadge * {
+  color: #14532d !important;
+}
+
+/* ---------------------------------------------------------
+ * 2. 目次画面（TOCタブ）コントラスト強化 (画像3 & 4 対応)
+ * --------------------------------------------------------- */
+/* 「第1話から朗読をはじめる」無効時 (画像4の拡大箇所) - 白飛び完全解消 */
+body.theme-paper #tocPrimaryPlayBtn.btn-playback-disabled,
+body.theme-paper #tocPrimaryPlayBtn:disabled {
+  background: #e2e8f0 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+body.theme-paper #tocPrimaryPlayBtn.btn-playback-disabled *,
+body.theme-paper #tocPrimaryPlayBtn:disabled * {
+  color: #334155 !important;
+}
+
+body.theme-sepia #tocPrimaryPlayBtn.btn-playback-disabled,
+body.theme-sepia #tocPrimaryPlayBtn:disabled {
+  background: #ede2d5 !important;
+  border: 1px solid #d5c8b8 !important;
+  color: #443527 !important;
+}
+body.theme-sepia #tocPrimaryPlayBtn.btn-playback-disabled *,
+body.theme-sepia #tocPrimaryPlayBtn:disabled * {
+  color: #443527 !important;
+}
+
+/* 「声・AI配役設定」ボタン (画像3 & 4の拡大箇所) - 淡色文字から高濃度インディゴへ */
+body.theme-paper #tab-toc button[onclick*="openNovelAiReanalyzeModal"] {
+  background-color: #eef2ff !important;
+  border: 1px solid #818cf8 !important;
+  color: #312e81 !important;
+}
+body.theme-paper #tab-toc button[onclick*="openNovelAiReanalyzeModal"] * {
+  color: #312e81 !important;
+}
+
+body.theme-sepia #tab-toc button[onclick*="openNovelAiReanalyzeModal"] {
+  background-color: #f3e8ff !important;
+  border: 1px solid #c084fc !important;
+  color: #4a044e !important;
+}
+body.theme-sepia #tab-toc button[onclick*="openNovelAiReanalyzeModal"] * {
+  color: #4a044e !important;
+}
+
+/* 目次タブのBG連続朗読バナー (画像3) */
+body.theme-paper #tab-toc .bg-amber-500\/10,
+body.theme-paper #tab-toc [class*="bg-amber-"] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+  color: #78350f !important;
+}
+body.theme-paper #tab-toc .bg-amber-500\/10 *,
+body.theme-paper #tab-toc [class*="bg-amber-"] * {
+  color: #78350f !important;
+}
+body.theme-paper #tab-toc [class*="bg-amber-"] button {
+  background-color: #ffffff !important;
+  border: 1px solid #f59e0b !important;
+  color: #78350f !important;
+}
+body.theme-paper #tab-toc [class*="bg-amber-"] button * {
+  color: #78350f !important;
+}
+
+body.theme-sepia #tab-toc .bg-amber-500\/10,
+body.theme-sepia #tab-toc [class*="bg-amber-"] {
+  background-color: #faf5eb !important;
+  border-color: #f59e0b !important;
+  color: #78350f !important;
+}
+body.theme-sepia #tab-toc .bg-amber-500\/10 *,
+body.theme-sepia #tab-toc [class*="bg-amber-"] * {
+  color: #78350f !important;
+}
+body.theme-sepia #tab-toc [class*="bg-amber-"] button {
+  background-color: #fffdfa !important;
+  border: 1px solid #d97706 !important;
+  color: #78350f !important;
+}
+body.theme-sepia #tab-toc [class*="bg-amber-"] button * {
+  color: #78350f !important;
+}
+
+/* ---------------------------------------------------------
+ * 3. アプリ全体の淡色テキスト（text-*-200/300）の自動高コントラストマッピング
+ * --------------------------------------------------------- */
+body.theme-paper .text-amber-100,
+body.theme-paper .text-amber-200,
+body.theme-paper .text-amber-300,
+body.theme-paper .text-amber-400,
+body.theme-paper .text-yellow-100,
+body.theme-paper .text-yellow-200,
+body.theme-paper .text-yellow-300,
+body.theme-paper .text-yellow-400 {
+  color: #78350f !important;
+}
+
+body.theme-sepia .text-amber-100,
+body.theme-sepia .text-amber-200,
+body.theme-sepia .text-amber-300,
+body.theme-sepia .text-amber-400,
+body.theme-sepia .text-yellow-100,
+body.theme-sepia .text-yellow-200,
+body.theme-sepia .text-yellow-300,
+body.theme-sepia .text-yellow-400 {
+  color: #78350f !important;
+}
+
+body.theme-paper .text-indigo-100,
+body.theme-paper .text-indigo-200,
+body.theme-paper .text-indigo-300 {
+  color: #312e81 !important;
+}
+body.theme-sepia .text-indigo-100,
+body.theme-sepia .text-indigo-200,
+body.theme-sepia .text-indigo-300 {
+  color: #4a044e !important;
+}
+
+body.theme-paper .text-purple-100,
+body.theme-paper .text-purple-200,
+body.theme-paper .text-purple-300 {
+  color: #4c1d95 !important;
+}
+body.theme-sepia .text-purple-100,
+body.theme-sepia .text-purple-200,
+body.theme-sepia .text-purple-300 {
+  color: #581c87 !important;
+}
+
+body.theme-paper .text-blue-100,
+body.theme-paper .text-blue-200,
+body.theme-paper .text-blue-300 {
+  color: #1e3a8a !important;
+}
+body.theme-sepia .text-blue-100,
+body.theme-sepia .text-blue-200,
+body.theme-sepia .text-blue-300 {
+  color: #1e3a8a !important;
+}
+
+body.theme-paper .text-emerald-100,
+body.theme-paper .text-emerald-200,
+body.theme-paper .text-emerald-300 {
+  color: #064e3b !important;
+}
+body.theme-sepia .text-emerald-100,
+body.theme-sepia .text-emerald-200,
+body.theme-sepia .text-emerald-300 {
+  color: #14532d !important;
+}
+
+body.theme-paper .text-cyan-100,
+body.theme-paper .text-cyan-200,
+body.theme-paper .text-cyan-300,
+body.theme-paper .text-sky-100,
+body.theme-paper .text-sky-200,
+body.theme-paper .text-sky-300 {
+  color: #164e63 !important;
+}
+body.theme-sepia .text-cyan-100,
+body.theme-sepia .text-cyan-200,
+body.theme-sepia .text-cyan-300,
+body.theme-sepia .text-sky-100,
+body.theme-sepia .text-sky-200,
+body.theme-sepia .text-sky-300 {
+  color: #164e63 !important;
+}
+
+body.theme-paper .text-slate-400 {
+  color: #475569 !important;
+}
+body.theme-sepia .text-slate-400 {
+  color: #5c4d3c !important;
+}
+
+/* =========================================================
+   音声生成プログレスウィジェット (bg-audio-progress-widget)
+   ミニプレイヤーと完全に幅・位置が調和するドッキングデザイン
+   ========================================================= */
+.bg-audio-progress-widget {
+  bottom: calc(66px + env(safe-area-inset-bottom, 0px));
+  background-color: rgba(15, 23, 42, 0.95);
+  border: 1.5px solid rgba(16, 185, 129, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.5), 0 0 12px -2px rgba(16, 185, 129, 0.2);
+  transition: bottom 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* ミニプレイヤー表示時はその直上にミリ単位でドッキング */
+body:has(#miniPlayerBar:not(.hidden)) .bg-audio-progress-widget,
+.bg-audio-progress-widget.has-mini-player {
+  bottom: calc(120px + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* 4大テーマ対応 (WCAG AAA 準拠) */
+body.theme-paper .bg-audio-progress-widget {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.12), 0 0 10px -2px rgba(16, 185, 129, 0.15) !important;
+}
+body.theme-paper #bgAudioNovelTitle {
+  color: #0f172a !important;
+}
+body.theme-paper #bgAudioPercentText {
+  color: #047857 !important;
+}
+body.theme-paper #bgAudioProgressBarTrack {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+body.theme-paper #bgAudioDismissBtn {
+  color: #64748b !important;
+}
+body.theme-paper #bgAudioDismissBtn:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+body.theme-sepia .bg-audio-progress-widget {
+  background-color: rgba(250, 245, 236, 0.98) !important;
+  border: 1.5px solid #d6c4ad !important;
+  box-shadow: 0 8px 24px -4px rgba(92, 77, 60, 0.15), 0 0 10px -2px rgba(180, 83, 9, 0.15) !important;
+}
+body.theme-sepia #bgAudioNovelTitle {
+  color: #2e2319 !important;
+}
+body.theme-sepia #bgAudioPercentText {
+  color: #b45309 !important;
+}
+body.theme-sepia #bgAudioProgressBarTrack {
+  background-color: #ebe0d3 !important;
+  border-color: #d6c4ad !important;
+}
+body.theme-sepia #bgAudioDismissBtn {
+  color: #786450 !important;
+}
+body.theme-sepia #bgAudioDismissBtn:hover {
+  background-color: #f5ebe0 !important;
+  color: #2e2319 !important;
+}
+
+body.theme-dark .bg-audio-progress-widget {
+  background-color: rgba(18, 25, 38, 0.96) !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+  box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.6) !important;
+}
+body.theme-dark #bgAudioNovelTitle {
+  color: #f8fafc !important;
+}
+body.theme-dark #bgAudioPercentText {
+  color: #34d399 !important;
+}
+
+body.theme-oled .bg-audio-progress-widget {
+  background-color: #000000 !important;
+  border: 1.5px solid #27272a !important;
+  box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.8) !important;
+}
+body.theme-oled #bgAudioNovelTitle {
+  color: #ffffff !important;
+}
+body.theme-oled #bgAudioPercentText {
+  color: #10b981 !important;
+}
+
+/* =========================================================
+   モーダル群 (評価・利用規約・Drive・AI演出・詳細シート・話者変更・通報)
+   Paper / Sepia テーマでの White-on-White 防止 & WCAG AAA 保証
+   ========================================================= */
+body.theme-paper #playStoreRatingModal h3,
+body.theme-paper #appPolicyModal h3,
+body.theme-paper #gdriveAuthModal h3,
+body.theme-paper #directorNotesModal h3,
+body.theme-paper #webPreviewModal h3,
+body.theme-paper #speakerSwitchModal h3,
+body.theme-paper #ugcReportModal h3,
+body.theme-paper #voicevoxCreditModal h3 {
+  color: #0f172a !important;
+}
+
+body.theme-sepia #playStoreRatingModal h3,
+body.theme-sepia #appPolicyModal h3,
+body.theme-sepia #gdriveAuthModal h3,
+body.theme-sepia #directorNotesModal h3,
+body.theme-sepia #webPreviewModal h3,
+body.theme-sepia #speakerSwitchModal h3,
+body.theme-sepia #ugcReportModal h3,
+body.theme-sepia #voicevoxCreditModal h3 {
+  color: #2e2319 !important;
+}
+
+body.theme-paper #directorNotesModal [class*="bg-purple-950"],
+body.theme-paper #directorNotesModal [class*="bg-indigo-950"] {
+  background-color: #f5f3ff !important;
+  border-color: #c4b5fd !important;
+  color: #3b0764 !important;
+}
+body.theme-paper #directorNotesModal [class*="bg-amber-950"] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+  color: #78350f !important;
+}
+body.theme-sepia #directorNotesModal [class*="bg-purple-950"],
+body.theme-sepia #directorNotesModal [class*="bg-indigo-950"] {
+  background-color: #f3e8ff !important;
+  border-color: #d8b4fe !important;
+  color: #3b0764 !important;
+}
+body.theme-sepia #directorNotesModal [class*="bg-amber-950"] {
+  background-color: #fef3c7 !important;
+  border-color: #f59e0b !important;
+  color: #78350f !important;
+}
+
+body.theme-paper #appPolicyModal [class*="bg-amber-950"],
+body.theme-sepia #appPolicyModal [class*="bg-amber-950"] {
+  background-color: #fef3c7 !important;
+  border-color: #d97706 !important;
+  color: #78350f !important;
+}
+body.theme-paper #appPolicyModal [class*="bg-amber-950"] *,
+body.theme-sepia #appPolicyModal [class*="bg-amber-950"] * {
+  color: #78350f !important;
+}
+
+/* =========================================================
+   🔍 検索テキストボックス視認性強化 (全4テーマ対応・高コントラスト)
+   ========================================================= */
+.search-hero-card {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.35) 0%, rgba(15, 23, 42, 0.95) 60%, rgba(17, 24, 39, 0.98) 100%) !important;
+  border: 2px solid rgba(16, 185, 129, 0.55) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(16, 185, 129, 0.15) inset !important;
+}
+
+.prominent-search-input,
+.prominent-search-input-sub {
+  background-color: #090d16 !important;
+  color: #ffffff !important;
+  border: 2px solid #34d399 !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(52, 211, 153, 0.18) !important;
+  caret-color: #34d399 !important;
+}
+
+.prominent-search-input::placeholder,
+.prominent-search-input-sub::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+}
+
+.prominent-search-input:focus,
+.prominent-search-input-sub:focus {
+  background-color: #050811 !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.28), inset 0 2px 5px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* OLED Black テーマでの検索ボックス */
+body.theme-oled .search-hero-card {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.4) 0%, #07090e 70%) !important;
+  border: 2px solid #10b981 !important;
+}
+
+body.theme-oled .prominent-search-input,
+body.theme-oled .prominent-search-input-sub {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #34d399 !important;
+}
+
+body.theme-oled .prominent-search-input::placeholder,
+body.theme-oled .prominent-search-input-sub::placeholder {
+  color: #cbd5e1 !important;
+}
+
+/* Paper White テーマでの検索ボックス (純白入力欄＋濃い緑枠でくっきり識別) */
+body.theme-paper .search-hero-card {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #eff6ff 100%) !important;
+  border: 2px solid #059669 !important;
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.12) !important;
+}
+
+body.theme-paper .search-hero-card label,
+body.theme-paper .search-hero-card label span {
+  color: #064e3b !important;
+}
+
+body.theme-paper .search-hero-badge {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border-color: #34d399 !important;
+}
+
+body.theme-paper .prominent-search-input,
+body.theme-paper .prominent-search-input-sub {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 2px solid #059669 !important;
+  box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(5, 150, 105, 0.1) !important;
+  caret-color: #059669 !important;
+}
+
+body.theme-paper .prominent-search-input::placeholder,
+body.theme-paper .prominent-search-input-sub::placeholder {
+  color: #64748b !important;
+}
+
+body.theme-paper .prominent-search-input:focus,
+body.theme-paper .prominent-search-input-sub:focus {
+  background-color: #ffffff !important;
+  border-color: #047857 !important;
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.22), inset 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+}
+
+body.theme-paper .search-input-lead-icon {
+  color: #059669 !important;
+}
+
+body.theme-paper .search-example-chip {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Warm Sepia テーマでの検索ボックス */
+body.theme-sepia .search-hero-card {
+  background: linear-gradient(135deg, #f5ead6 0%, #fbf6ec 100%) !important;
+  border: 2px solid #059669 !important;
+  box-shadow: 0 6px 18px rgba(46, 35, 25, 0.1) !important;
+}
+
+body.theme-sepia .search-hero-card label,
+body.theme-sepia .search-hero-card label span {
+  color: #064e3b !important;
+}
+
+body.theme-sepia .search-hero-badge {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border-color: #34d399 !important;
+}
+
+body.theme-sepia .prominent-search-input,
+body.theme-sepia .prominent-search-input-sub {
+  background-color: #fffdf9 !important;
+  color: #2e2319 !important;
+  border: 2px solid #059669 !important;
+  box-shadow: inset 0 2px 4px rgba(46, 35, 25, 0.07) !important;
+  caret-color: #059669 !important;
+}
+
+body.theme-sepia .prominent-search-input::placeholder,
+body.theme-sepia .prominent-search-input-sub::placeholder {
+  color: #786452 !important;
+}
+
+body.theme-sepia .prominent-search-input:focus,
+body.theme-sepia .prominent-search-input-sub:focus {
+  background-color: #ffffff !important;
+  border-color: #047857 !important;
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.22) !important;
+}
+
+body.theme-sepia .search-input-lead-icon {
+  color: #059669 !important;
+}
+
+body.theme-sepia .search-example-chip {
+  background-color: #fffdf9 !important;
+  color: #2e2319 !important;
+  border-color: #b49b82 !important;
+}
+
+
+
